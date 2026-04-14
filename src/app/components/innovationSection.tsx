@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function ArrowIcon() {
   return (
     <svg
@@ -46,8 +48,9 @@ const cards = [
     nodeId: "3:229",
   },
   {
-    title: "Animation",
+    title: "Automation",
     nodeId: "3:242",
+    href: "/automation",
   },
 ];
 
@@ -66,20 +69,41 @@ export default function InnovationSection() {
         </header>
 
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-10" data-node-id="3:226">
-          {cards.map((card) => (
-            <article
-              key={card.title}
-              className="relative min-h-117.5 overflow-hidden bg-[linear-gradient(198.3229deg,#5219db_11.943%,#120351_84.825%)] px-8 py-8 text-[#eae9fe] sm:min-h-142.5 sm:px-10 sm:py-10"
-              data-node-id={card.nodeId}
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_42%)]" />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgba(0,0,0,0.12)_100%)]" />
+          {cards.map((card) => {
+            const content = (
+              <>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_42%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgba(0,0,0,0.12)_100%)]" />
 
-              <div className="relative flex h-full items-end">
-                <RollingTitle title={card.title} />
-              </div>
-            </article>
-          ))}
+                <div className="relative flex h-full items-end">
+                  <RollingTitle title={card.title} />
+                </div>
+              </>
+            );
+
+            if (card.href) {
+              return (
+                <Link
+                  key={card.title}
+                  href={card.href}
+                  className="relative min-h-117.5 overflow-hidden bg-[linear-gradient(198.3229deg,#5219db_11.943%,#120351_84.825%)] px-8 py-8 text-[#eae9fe] sm:min-h-142.5 sm:px-10 sm:py-10"
+                  data-node-id={card.nodeId}
+                >
+                  {content}
+                </Link>
+              );
+            }
+
+            return (
+              <article
+                key={card.title}
+                className="relative min-h-117.5 overflow-hidden bg-[linear-gradient(198.3229deg,#5219db_11.943%,#120351_84.825%)] px-8 py-8 text-[#eae9fe] sm:min-h-142.5 sm:px-10 sm:py-10"
+                data-node-id={card.nodeId}
+              >
+                {content}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

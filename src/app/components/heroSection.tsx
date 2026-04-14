@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HeroSecion() {
   const assets = {
     heroBg: "/figma-assets/hero-bg.jpg",
@@ -29,10 +31,10 @@ export default function HeroSecion() {
               aria-label="Primary"
             >
               <a href="#">Design</a>
-              <a href="#">Automation</a>
+              <Link href="/automation">Automation</Link>
               <a href="#">Production</a>
               <a href="#">Technology</a>
-              <a href="#" className="rounded-full bg-[#3200eb] px-5.5 py-2">
+              <a href="#contact" className="rounded-full bg-[#3200eb] px-5.5 py-2">
                 Contact Us
               </a>
             </nav>
