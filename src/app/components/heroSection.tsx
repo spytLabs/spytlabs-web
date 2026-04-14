@@ -1,8 +1,10 @@
 import Link from "next/link";
+import NavBar from "./navBar";
 
 export default function HeroSecion() {
   const assets = {
-    heroBg: "/figma-assets/hero-bg.jpg",
+    heroBg: "/figma-assets/spyt-bg.png",
+    heroBgVideo: "/figma-assets/spyt-bg-animation.mp4",
     logo: "/figma-assets/logo.png",
     google: "/figma-assets/google.png",
     amazon: "/figma-assets/amazon.png",
@@ -15,36 +17,29 @@ export default function HeroSecion() {
 
 
     return (
-         <section className="overflow-hidden rounded-lg" data-node-id="2:93">
+      <section className="relative overflow-hidden rounded-lg min-h-[85vh] flex flex-col justify-end" data-node-id="2:93">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={assets.heroBg}
+        >
+          <source src={assets.heroBgVideo} type="video/mp4" />
+        </video>
+        
         <div
-          className="flex min-h-170 flex-col justify-end bg-cover bg-center pt-7 pr-12 pb-11 pl-12 text-white max-[1060px]:min-h-140 max-[1060px]:pt-5 max-[1060px]:pr-5.5 max-[1060px]:pb-7 max-[1060px]:pl-5.5 max-[640px]:min-h-122.5"
-          style={{ backgroundImage: `url(${assets.heroBg})` }}
+          className="relative z-10 flex flex-1 flex-col justify-end pt-7 pr-12 pb-11 pl-12 text-white max-[1060px]:pt-5 max-[1060px]:pr-5.5 max-[1060px]:pb-7 max-[1060px]:pl-5.5"
           data-node-id="1:399"
         >
-          <header
-            className="mb-auto flex items-center justify-between max-[1060px]:flex-col max-[1060px]:items-start max-[1060px]:gap-4"
-            data-node-id="2:92"
-          >
-            <img src={assets.logo} alt="spytLabs" className="h-8.5 w-38.75 object-contain" />
-            <nav
-              className="flex items-center gap-7 text-[clamp(15px,1.15vw,20px)] font-medium max-[1060px]:flex-wrap max-[1060px]:gap-y-3 max-[1060px]:gap-x-5 [&>a]:text-white [&>a]:no-underline"
-              aria-label="Primary"
-            >
-              <Link href="/design">Design</Link>
-              <Link href="/automation">Automation</Link>
-              <a href="#">Production</a>
-              <a href="#">Technology</a>
-              <a href="#contact" className="rounded-full bg-[#3200eb] px-5.5 py-2">
-                Contact Us
-              </a>
-            </nav>
-          </header>
+          <NavBar />
 
-          <p className="m-0 text-[clamp(14px,1vw,20px)] font-medium tracking-[0] opacity-90" data-node-id="2:46">
+          <p className="m-0 text-[clamp(14px,1vw,20px)] font-medium tracking-[0] text-gray-300 select-none" data-node-id="2:46">
             BEYOND MARKETING. INTO THE FUTURE
           </p>
           <h1
-            className="mt-2 mb-0 flex flex-col text-[clamp(48px,6.55vw,96px)] leading-[1.08] font-semibold tracking-[-0.015em] max-[640px]:text-[clamp(42px,12vw,62px)]"
+            className="mt-2 mb-0 flex flex-col text-[clamp(48px,6.55vw,96px)] leading-[1.08] font-semibold tracking-[-0.015em] max-[640px]:text-[clamp(42px,12vw,62px)] select-none"
             data-node-id="2:3"
           >
             <span>We don&apos;t follow trends</span>

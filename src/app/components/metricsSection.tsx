@@ -13,7 +13,7 @@ export default function MetricsSection() {
 
   return (
     <section
-      className="flex flex-col gap-10.5 border-b border-black/24 px-10 pt-12 pb-14 max-[1060px]:pt-9 max-[1060px]:pr-5.5 max-[1060px]:pb-11 max-[1060px]:pl-5.5"
+      className="flex flex-col gap-20 border-b border-black/24 px-12.5 py-22 max-[1060px]:pt-9 max-[1060px]:pr-5.5 max-[1060px]:pb-11 max-[1060px]:pl-5.5"
       data-node-id="2:137"
     >
       <div data-node-id="7:407">
@@ -24,7 +24,7 @@ export default function MetricsSection() {
           Our <span className="text-[#2d0da0]">Ecosystem</span>
         </h2>
         <p
-          className="mt-3 mb-0 max-w-330 text-[clamp(19px,1.6vw,35px)] leading-[1.35] font-medium text-[#333339]"
+          className="mt-5 mb-0 max-w-330 text-[clamp(19px,1.6vw,35px)] leading-[1.35] font-medium text-[#333339]"
           data-node-id="2:115"
         >
           To Push The Boundaries of Digital Marketing and Offer Brands a
@@ -34,7 +34,7 @@ export default function MetricsSection() {
       </div>
 
       <div
-        className="grid grid-cols-[repeat(2,minmax(300px,1fr))] gap-15 max-[1060px]:grid-cols-1 max-[1060px]:gap-9"
+        className="w-[80%] flex flex-col gap-10.5 sm:flex-row sm:gap-20"
         data-node-id="3:182"
       >
         <article className="flex flex-col gap-4.5" data-node-id="3:178">
