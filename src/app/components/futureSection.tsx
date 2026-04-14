@@ -74,7 +74,7 @@ export default function FutureSection() {
           </p>
         </header>
 
-        <div className="relative aspect-[1320/720] w-full overflow-hidden bg-[#dbd8e7]" data-node-id="2:163">
+        <div className="relative aspect-[1320/720] w-[80%] max-w-[1100px] mx-auto overflow-hidden bg-[#dbd8e7]" data-node-id="2:163">
           <video
             ref={videoRef}
             className="h-full w-full object-cover"
