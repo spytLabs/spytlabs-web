@@ -46,6 +46,7 @@ const cards = [
   {
     title: "Design",
     nodeId: "3:229",
+    href: "/design",
   },
   {
     title: "Automation",
@@ -81,27 +82,15 @@ export default function InnovationSection() {
               </>
             );
 
-            if (card.href) {
-              return (
-                <Link
-                  key={card.title}
-                  href={card.href}
-                  className="relative min-h-117.5 overflow-hidden bg-[linear-gradient(198.3229deg,#5219db_11.943%,#120351_84.825%)] px-8 py-8 text-[#eae9fe] sm:min-h-142.5 sm:px-10 sm:py-10"
-                  data-node-id={card.nodeId}
-                >
-                  {content}
-                </Link>
-              );
-            }
-
             return (
-              <article
+              <Link
                 key={card.title}
+                href={card.href}
                 className="relative min-h-117.5 overflow-hidden bg-[linear-gradient(198.3229deg,#5219db_11.943%,#120351_84.825%)] px-8 py-8 text-[#eae9fe] sm:min-h-142.5 sm:px-10 sm:py-10"
                 data-node-id={card.nodeId}
               >
                 {content}
-              </article>
+              </Link>
             );
           })}
         </div>
