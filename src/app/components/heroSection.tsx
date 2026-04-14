@@ -30,7 +30,7 @@ export default function HeroSecion() {
               className="flex items-center gap-7 text-[clamp(15px,1.15vw,20px)] font-medium max-[1060px]:flex-wrap max-[1060px]:gap-y-3 max-[1060px]:gap-x-5 [&>a]:text-white [&>a]:no-underline"
               aria-label="Primary"
             >
-              <a href="#">Design</a>
+              <Link href="/design">Design</Link>
               <Link href="/automation">Automation</Link>
               <a href="#">Production</a>
               <a href="#">Technology</a>
