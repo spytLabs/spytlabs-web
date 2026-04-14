@@ -54,7 +54,7 @@ function YoutubeIcon() {
 
 export default function ContactFooterSection() {
   return (
-    <section className="px-0 pb-8 pt-0 sm:pb-10" data-node-id="11:6">
+    <section id="contact" className="px-0 pb-8 pt-0 sm:pb-10" data-node-id="11:6">
       <div className="mx-auto w-full">
         <div className="overflow-hidden rounded-lg" data-node-id="6:336">
           <div className="grid min-h-[330px] grid-cols-1 md:min-h-[430px] md:grid-cols-[1.92fr_1fr]">
@@ -121,12 +121,12 @@ export default function ContactFooterSection() {
               NAVIGATION
             </p>
             <nav className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-[clamp(24px,2.2vw,32px)] leading-[1.2] font-medium text-[#333339]">
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Home</a>
+              <a href="/" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Home</a>
               <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Design</a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Automation</a>
+              <a href="/automation" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Automation</a>
               <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Production</a>
               <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Technology</a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Contact Us</a>
+              <a href="#contact" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Contact Us</a>
             </nav>
           </div>
 
