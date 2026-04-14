@@ -1,5 +1,7 @@
 import HeroSecion from "./components/heroSection";
 import MetricsSection from "./components/metricsSection";
+import FutureSection from "./components/futureSection";
+import InnovationSection from "./components/innovationSection";
 import PartnerSection from "./components/partnerSection";
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <HeroSecion />
       <PartnerSection />
       <MetricsSection />
+      <FutureSection />
+      <InnovationSection />
     </main>
   );
 }
