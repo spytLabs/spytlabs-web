@@ -15,13 +15,38 @@ function ArrowIcon() {
   );
 }
 
+function RollingTitle({ title }: { title: string }) {
+  return (
+    <div className="group/title w-full">
+      <div className="h-[clamp(44px,5.2vw,84px)] overflow-hidden">
+        <div className="flex h-[200%] flex-col transition-transform duration-500 ease-out group-hover/title:-translate-y-1/2">
+          <div className="flex h-1/2 items-end justify-start">
+            <h3 className="text-[clamp(34px,4.4vw,72px)] leading-none font-medium tracking-[-0.035em]">
+              {title}
+            </h3>
+          </div>
+
+          <div className="flex h-1/2 items-end justify-between gap-4">
+            <h3 className="text-[clamp(34px,4.4vw,72px)] leading-none font-medium tracking-[-0.035em]">
+              {title}
+            </h3>
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-[#eae9fe] bg-transparent">
+              <ArrowIcon />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const cards = [
   {
     title: "Design",
     nodeId: "3:229",
   },
   {
-    title: "Automation",
+    title: "Animation",
     nodeId: "3:242",
   },
 ];
@@ -29,7 +54,7 @@ const cards = [
 export default function InnovationSection() {
   return (
     <section className="px-5 pb-16 pt-6 sm:px-11 sm:pb-20" data-node-id="3:255">
-      <div className="mx-auto flex w-full max-w-352.5 flex-col gap-8 sm:gap-10">
+      <div className=" flex w-full  flex-col gap-8 sm:gap-10">
         <header className="max-w-330" data-node-id="3:219">
           <h2
             className="m-0 max-w-280 text-[clamp(42px,5.5vw,72px)] leading-[1.05] font-semibold tracking-[-0.04em] text-black"
@@ -51,18 +76,7 @@ export default function InnovationSection() {
               <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgba(0,0,0,0.12)_100%)]" />
 
               <div className="relative flex h-full items-end">
-                <div className="flex w-full items-end justify-between gap-4">
-                  <h3 className="text-[clamp(34px,4.4vw,72px)] leading-none font-medium tracking-[-0.035em]">
-                    {card.title}
-                  </h3>
-                  <button
-                    type="button"
-                    className="flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-[#eae9fe] bg-transparent transition-transform duration-200 hover:scale-105"
-                    aria-label={`${card.title} details`}
-                  >
-                    <ArrowIcon />
-                  </button>
-                </div>
+                <RollingTitle title={card.title} />
               </div>
             </article>
           ))}
