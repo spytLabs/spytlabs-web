@@ -124,6 +124,7 @@ export default function ContactFooterSection() {
             </p>
             <nav className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-[clamp(24px,2.2vw,32px)] leading-[1.2] font-medium text-[#333339]">
               <a href="/" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Home</HoverScrollText></a>
+              <a href="/blog" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Blog</HoverScrollText></a>
               <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Design</HoverScrollText></a>
               <a href="/automation" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Automation</HoverScrollText></a>
               <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Production</HoverScrollText></a>

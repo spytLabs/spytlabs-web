@@ -31,6 +31,7 @@ export default function PageHeroSection({
             className="flex items-center gap-7 text-[clamp(13px,1vw,20px)] font-medium max-[1060px]:flex-wrap max-[1060px]:gap-y-2 max-[1060px]:gap-x-4 [&>a]:text-white [&>a]:no-underline"
             aria-label="Primary"
           >
+            <Link href="/blog">Blog</Link>
             <Link href="/design">Design</Link>
             <Link href="/automation">Automation</Link>
             <a href="#">Production</a>
