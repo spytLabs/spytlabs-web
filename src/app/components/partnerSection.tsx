@@ -22,7 +22,7 @@ export default function PartnerSection() {
 
   return (
      <section
-        className="min-h-[15vh] flex justify-between items-center w-full border-y border-black/24 px-12.5 py-4.5 max-[640px]:hidden max-[1024px]:flex-wrap max-[1024px]:justify-center max-[1024px]:gap-6 max-[640px]:p-4"
+        className="min-h-[15vh] flex justify-center sm:justify-between flex-wrap items-center w-full gap-6 overflow-hidden border-b border-black/15 px-12.5 py-4.5 max-[640px]:p-8 max-[640px]:gap-y-6"
         data-node-id="2:108"
         aria-label="Partners"
       >
@@ -31,7 +31,7 @@ export default function PartnerSection() {
             key={partner.alt}
             src={partner.src}
             alt={partner.alt}
-            className="max-h-10.5  object-contain opacity-[0.5] select-none"
+            className="max-h-10.5 h-auto w-auto min-w-[80px] max-w-[28%] sm:max-w-[18%] shrink object-contain opacity-[0.5] select-none flex-1"
             draggable="false"
           />
         ))}
