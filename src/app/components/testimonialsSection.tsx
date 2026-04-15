@@ -20,13 +20,13 @@ const testimonials = [
 export default function TestimonialsSection() {
   return (
     <section
-      className="border-b border-black/35 px-5 pb-16 pt-14 sm:px-11 sm:pb-20 sm:pt-18"
+      className="border-b border-black/35 px-5 pb-15 sm:pb-20"
       data-node-id="4:322"
     >
       <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 sm:gap-14">
-        <header className="mx-auto flex max-w-[1280px] flex-col items-center gap-4 text-center">
+        <header className="mx-auto flex max-w-[1280px] flex-col items-center gap-4 sm:text-center">
           <h2
-            className="text-[clamp(42px,4vw,72px)] leading-[1.06] font-semibold tracking-[-0.04em] text-black"
+            className="section-title font-semibold text-black"
             data-node-id="3:250"
           >
             <span>Established </span>
@@ -35,7 +35,7 @@ export default function TestimonialsSection() {
             <span className="text-[#2d0da0]">engagements</span>
           </h2>
           <p
-            className="max-w-[1060px] text-[clamp(18px,1.5vw,34px)] leading-[1.45] font-medium text-[#77767e]"
+            className="max-w-[1060px] text-[clamp(15px,1.5vw,34px)] leading-[1.45] font-regular text-[#77767e]"
             data-node-id="3:253"
           >
             We believe in partnership over transactions. Our client relationships

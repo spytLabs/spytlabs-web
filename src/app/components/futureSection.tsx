@@ -59,7 +59,7 @@ export default function FutureSection() {
       <div className="flex w-full flex-col gap-8 sm:gap-10">
         <header className="max-w-[1320px]" data-node-id="2:167">
           <h2
-            className="m-0 text-[clamp(42px,5.4vw,72px)] leading-[1.02] font-semibold tracking-[-0.04em] text-black"
+            className="m-0 section-title font-semibold text-black"
             data-node-id="2:143"
           >
             <span className="text-[#2d0da0]">The Future </span>

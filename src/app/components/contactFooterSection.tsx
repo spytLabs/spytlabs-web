@@ -1,6 +1,8 @@
 const portraitImage =
   "/figma-assets/contact-us-guy.png";
 
+import HoverScrollText from "./HoverScrollText";
+
 function ArrowIcon() {
   return (
     <svg
@@ -57,7 +59,7 @@ export default function ContactFooterSection() {
     <section id="contact" className="px-0 pb-8 pt-0 sm:pb-10" data-node-id="11:6">
       <div className="mx-auto w-full">
         <div className="overflow-hidden rounded-lg" data-node-id="6:336">
-          <div className="grid min-h-[330px] grid-cols-1 md:min-h-[430px] md:grid-cols-[1.92fr_1fr]">
+          <div className="grid min-h-150 grid-cols-1  md:grid-cols-[1.92fr_1fr]">
             <div className="relative flex flex-col justify-between overflow-hidden bg-[linear-gradient(198deg,#5219db_12%,#120351_85%)] px-8 py-8 sm:px-12 sm:py-10">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,255,255,0.12),transparent_45%)]" />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_65%,rgba(173,129,255,0.18),transparent_48%)]" />
@@ -77,13 +79,13 @@ export default function ContactFooterSection() {
                   <div className="h-[clamp(44px,5.8vw,88px)] overflow-hidden">
                     <div className="flex h-[200%] flex-col transition-transform duration-500 ease-out group-hover/team:-translate-y-1/2">
                       <div className="flex h-1/2 items-end">
-                        <h2 className="text-[clamp(42px,5.2vw,80px)] leading-[1.04] font-medium tracking-[-0.02em] text-[#eae9fe]">
+                        <h2 className="section-title font-medium text-[#eae9fe]">
                           Speak to our team
                         </h2>
                       </div>
 
                       <div className="flex h-1/2 items-end gap-3 sm:gap-4">
-                        <h2 className="text-[clamp(42px,5.2vw,80px)] leading-[1.04] font-medium tracking-[-0.02em] text-[#eae9fe]">
+                        <h2 className="section-title font-medium text-[#eae9fe]">
                           Speak to our team
                         </h2>
                         <span className="mb-[0.45em] flex size-13 shrink-0 items-center justify-center rounded-full border-2 border-[#dbd8ff] sm:size-16">
@@ -112,7 +114,7 @@ export default function ContactFooterSection() {
               EMAIL
             </p>
             <p className="mt-2 text-[clamp(30px,2.9vw,40px)] leading-[1.12] font-medium text-[#333339]">
-              hello@spytlabs.com
+              <HoverScrollText>hello@spytlabs.com</HoverScrollText>
             </p>
           </div>
 
@@ -121,12 +123,12 @@ export default function ContactFooterSection() {
               NAVIGATION
             </p>
             <nav className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-[clamp(24px,2.2vw,32px)] leading-[1.2] font-medium text-[#333339]">
-              <a href="/" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Home</a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Design</a>
-              <a href="/automation" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Automation</a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Production</a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Technology</a>
-              <a href="#contact" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Contact Us</a>
+              <a href="/" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Home</HoverScrollText></a>
+              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Design</HoverScrollText></a>
+              <a href="/automation" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Automation</HoverScrollText></a>
+              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Production</HoverScrollText></a>
+              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Technology</HoverScrollText></a>
+              <a href="#contact" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Contact Us</HoverScrollText></a>
             </nav>
           </div>
 
@@ -135,8 +137,8 @@ export default function ContactFooterSection() {
               LEGAL
             </p>
             <div className="mt-2 flex flex-wrap gap-x-8 gap-y-2 text-[clamp(24px,2.2vw,32px)] leading-[1.2] font-medium text-[#333339]">
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Privacy Policy</a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]">Terms of Service</a>
+              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Privacy Policy</HoverScrollText></a>
+              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Terms of Service</HoverScrollText></a>
             </div>
           </div>
 
