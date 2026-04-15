@@ -78,17 +78,17 @@ export default function ContactFooterSection() {
                 <div className="group/team mt-1 w-fit">
                   <div className="h-[clamp(44px,5.8vw,88px)] overflow-hidden">
                     <div className="flex h-[200%] flex-col transition-transform duration-500 ease-out group-hover/team:-translate-y-1/2">
-                      <div className="flex h-1/2 items-end">
+                      <div className="h-1/2 items-end hidden md:flex">
                         <h2 className="section-title font-medium text-[#eae9fe]">
                           Speak to our team
                         </h2>
                       </div>
 
                       <div className="flex h-1/2 items-end gap-3 sm:gap-4">
-                        <h2 className="section-title font-medium text-[#eae9fe]">
+                        <h2 className="section-title font-medium text-[#eae9fe] max-md:text-[2rem]">
                           Speak to our team
                         </h2>
-                        <span className="mb-[0.45em] flex size-13 shrink-0 items-center justify-center rounded-full border-2 border-[#dbd8ff] sm:size-16">
+                        <span className="mb-[0.45em] flex size-7 shrink-0 items-center justify-center rounded-full border-2 border-[#dbd8ff] sm:size-16">
                           <ArrowIcon />
                         </span>
                       </div>

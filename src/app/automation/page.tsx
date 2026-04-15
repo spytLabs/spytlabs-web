@@ -10,11 +10,11 @@ const assets = {
 function AutomationPattern() {
   return (
     <section className="px-5 sm:px-11" data-node-id="7:490">
-      <div className="overflow-hidden">
+      <div className="overflow-hidden ">
         <Image
           src={assets.automationGraphic}
           alt="Graphic illustrating business process automation"
-          className="mx-auto h-auto w-[80%] object-cover"
+          className="mx-auto my-auto h-auto w-full md:w-[70%] object-cover"
           width={1000}
           height={600}
         />
@@ -39,12 +39,21 @@ export default function AutomationPage() {
         </p>
       </section>
 
-      <section className="mt-15 pt-8 sm:pt-11 border-black border-y" >
+      <section className="mt-15  border-black border-y">
         <AutomationPattern />
       </section>
 
-      <section className="grid grid-cols-2 mt-15 ">
+      <section className="grid md:grid-cols-2 grid-cols-1 mt-8 md:mt-15 ">
         <section className="px-5 pt-8 sm:px-11 sm:pt-11" data-node-id="7:492">
+          <section className=" mb-9  md:hidden block" data-node-id="7:493">
+            <Image
+              src={assets.workflowImage}
+              alt="Business workflow automation strategy meeting"
+              className="object-cover"
+              width={1000}
+              height={600}
+            />
+          </section>
           <p className="max-w-[1280px] text-[clamp(20px,2.2vw,32px)] leading-[1.6] font-normal text-[#333339]">
             By combining practical insight with adaptable technology, we design
             systems that fit naturally into your existing workflows. This
@@ -54,7 +63,10 @@ export default function AutomationPage() {
           </p>
         </section>
 
-        <section className="px-5 pt-8 sm:px-11 sm:pt-11" data-node-id="7:493">
+        <section
+          className="px-5 pt-8 sm:px-11 sm:pt-11 hidden md:block"
+          data-node-id="7:493"
+        >
           <Image
             src={assets.workflowImage}
             alt="Business workflow automation strategy meeting"

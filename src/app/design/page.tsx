@@ -20,7 +20,7 @@ export default function DesignPage() {
       {/* Main Content Container */}
       <div className="mx-auto w-full max-w-[1410px] px-5 sm:px-11">
         {/* Headline Section */}
-        <section className="py-16 text-center sm:py-20">
+        <section className="py-16 md:pb-16 pb-8 text-center sm:py-20">
           <h2 className="mx-auto max-w-3xl text-[clamp(42px,5.5vw,72px)] leading-[1.05] font-semibold tracking-[-0.04em] text-black">
             Crafting Digital Products
             <span className="block text-[#2d0da0]">That Truly Connect</span>
@@ -34,21 +34,21 @@ export default function DesignPage() {
 
         {/* Three Column Image Grid */}
         <section className="flex flex-col gap-8 sm:flex-row sm:gap-10 py-12">
-          <div className="flex-1 overflow-hidden rounded-lg">
+          <div className="flex-1 overflow-hidden rounded-lg md:block hidden">
             <img
               src={assets.designImg1}
               alt="Design showcase 1"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover "
             />
           </div>
-          <div className="flex-1 overflow-hidden rounded-lg">
+          <div className="flex-1 overflow-hidden rounded-lg md:block hidden">
             <img
               src={assets.designImg2}
               alt="Design showcase 2"
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="flex-1 overflow-hidden rounded-lg">
+          <div className="flex-1 overflow-hidden rounded-lg ">
             <img
               src={assets.designImg3}
               alt="Design showcase 3"
