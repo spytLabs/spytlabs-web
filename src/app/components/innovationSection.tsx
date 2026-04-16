@@ -6,25 +6,25 @@ const cards = [
     title: "Design",
     nodeId: "3:229",
     href: "/design",
-    videoSrc: "/figma-assets/Design.mp4",
+    videoSrc: "/figma-assets/Design_2.mp4",
   },
   {
     title: "Automation",
     nodeId: "3:242",
     href: "/automation",
-    videoSrc: "/figma-assets/automation.mp4",
+    videoSrc: "/figma-assets/automation_2.mp4",
   },
   {
     title: "Production",
     nodeId: "3:243",
     href: "#",
-    videoSrc: "/figma-assets/production.mp4",
+    videoSrc: "/figma-assets/spyt-prod-vid-bg-3.mp4",
   },
   {
     title: "Technology",
     nodeId: "3:244",
     href: "#",
-    videoSrc: "/figma-assets/spyt-bg-animation.mp4",
+    videoSrc: "/figma-assets/spyt-web-bg-2.webm",
   }
 ];
 

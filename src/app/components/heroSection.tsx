@@ -4,7 +4,7 @@ import NavBar from "./navBar";
 export default function HeroSecion() {
   const assets = {
     heroBg: "/figma-assets/spyt-bg.png",
-    heroBgVideo: "/figma-assets/spyt-bg-animation.mp4",
+    heroBgVideo: "/figma-assets/spyt-web-bg-2.webm",
     logo: "/figma-assets/logo.png",
     google: "/figma-assets/google.png",
     amazon: "/figma-assets/amazon.png",
