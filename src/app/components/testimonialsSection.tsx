@@ -15,16 +15,24 @@ const testimonials = [
     avatar: "/figma-assets/tertimonial-avt-2.png",
     nodeId: "4:315",
   },
+  {
+    name: "Ravi Jayasinghe",
+    role: "Founder, Innovatech Labs",
+    quote:
+      "The team’s expertise in digital innovation is truly next-level. They didn’t just implement tools; they transformed our entire approach to digital marketing. The results speak for themselves – we’ve seen significant growth and a much stronger connection with our audience.",
+    avatar: "/figma-assets/tertimonial-avt-3.png",
+    nodeId: "4:316",
+  }
 ];
 
 export default function TestimonialsSection() {
   return (
     <section
-      className="border-b border-black/35 px-5 pb-15 sm:pb-20"
+      className=" pb-15 pt-5"
       data-node-id="4:322"
     >
       <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-10 sm:gap-14">
-        <header className="mx-auto flex max-w-[1280px] flex-col items-center gap-4 sm:text-center">
+        <header className="mx-auto flex max-w-[1280px] flex-col items-center gap-4 px-5 sm:px-11 sm:text-center">
           <h2
             className="section-title font-semibold text-black"
             data-node-id="3:250"
@@ -43,11 +51,11 @@ export default function TestimonialsSection() {
           </p>
         </header>
 
-        <div className="grid gap-6 xl:grid-cols-2 xl:gap-9" data-node-id="4:285">
+        <div className="flex w-full gap-5 overflow-x-auto pb-4 snap-x snap-mandatory sm:gap-8 lg:gap-10 sm:px-11 px-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" data-node-id="4:285">
           {testimonials.map((item) => (
             <article
               key={item.name}
-              className="flex min-h-[330px] flex-col justify-between border border-black/30 p-6 sm:min-h-[420px] sm:p-10"
+              className="relative flex w-[85%] shrink-0 snap-center min-h-[330px] flex-col justify-between border border-black/30 p-6 sm:min-h-[420px] sm:w-[60%] lg:w-[45%] sm:p-10"
               data-node-id={item.nodeId}
             >
               <div className="flex items-center gap-5 sm:gap-8" data-node-id="4:265">
@@ -71,6 +79,7 @@ export default function TestimonialsSection() {
               </p>
             </article>
           ))}
+          <div className="w-[1px] shrink-0 sm:w-[1px]"></div>
         </div>
       </div>
     </section>

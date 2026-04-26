@@ -9,6 +9,7 @@ const assets = {
   designImg4: "/figma-assets/design-img-4.jpg",
   designImg5: "/figma-assets/design-img-5.jpg",
   designImg6: "/figma-assets/design-img-6.jpg",
+  designImg7: "/figma-assets/design-img-7.png",
 };
 
 export default function DesignPage() {
@@ -21,45 +22,51 @@ export default function DesignPage() {
       <div className="mx-auto w-full max-w-[1410px] px-5 sm:px-11">
         {/* Headline Section */}
         <section className="py-16 md:pb-16 pb-8 text-center sm:py-20">
-          <h2 className="mx-auto max-w-3xl text-[clamp(42px,5.5vw,72px)] leading-[1.05] font-semibold tracking-[-0.04em] text-black">
+          <h2 className="mx-auto max-w-3xl text-[clamp(40px,5.5vw,65px)] leading-[1.05] font-semibold tracking-[-0.04em] text-black">
             Crafting Digital Products
             <span className="block text-[#2d0da0]">That Truly Connect</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-4xl text-[clamp(16px,1.5vw,32px)] leading-[1.4] font-normal text-[#333339]">
+          <p className="mx-auto mt-6 max-w-4xl text-[clamp(14px,1.5vw,30px)] leading-[1.3] font-normal text-[#45454a]">
             We combine storytelling, design, and engineering
             <br />
             to build products that connect and perform.
           </p>
         </section>
 
-        {/* Three Column Image Grid */}
-        <section className="flex flex-col gap-8 sm:flex-row sm:gap-10 py-12">
-          <div className="flex-1 overflow-hidden rounded-lg md:block hidden">
-            <img
-              src={assets.designImg1}
-              alt="Design showcase 1"
-              className="h-full w-full object-cover "
-            />
-          </div>
-          <div className="flex-1 overflow-hidden rounded-lg md:block hidden">
-            <img
-              src={assets.designImg2}
-              alt="Design showcase 2"
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="flex-1 overflow-hidden rounded-lg ">
-            <img
-              src={assets.designImg3}
-              alt="Design showcase 3"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </section>
+        {/* Three Column Image Grid - full-bleed, cropped edges */}
+        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-clip py-12">
+          <section className="mx-auto w-[170vw] sm:w-[150vw] lg:w-[120vw]">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-10">
+              <div className="col-start-1 overflow-hidden">
+          <img
+            src={assets.designImg1}
+            alt="Design showcase 1"
+            className="h-55 w-full object-cover sm:h-70 lg:h-125"
+          />
+              </div>
+
+              <div className="col-start-2 overflow-hidden">
+          <img
+            src={assets.designImg7}
+            alt="Design showcase 2"
+            className="h-55 w-full object-cover sm:h-70 lg:h-125"
+          />
+              </div>
+
+              <div className="col-start-3 overflow-hidden">
+          <img
+            src={assets.designImg3}
+            alt="Design showcase 3"
+            className="h-55 w-full object-cover sm:h-70 lg:h-125"
+          />
+              </div>
+            </div>
+          </section>
+        </div>
 
         {/* Feature Section 1: Intuitive UI/UX */}
-        <section className="flex flex-col gap-10 py-12 md:flex-row md:items-center">
-          <div className="flex-1 space-y-4">
+        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row md:items-stretch">
+          <div className="flex flex-1 flex-col justify-center space-y-4">
             <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
               Intuitive UI/UX Experiences
             </h3>
@@ -70,18 +77,18 @@ export default function DesignPage() {
               continuously improve how people interact with your product.
             </p>
           </div>
-          <div className="flex-1 overflow-hidden rounded-lg">
+          <div className="flex-1 overflow-hidden">
             <img
               src={assets.designImg4}
               alt="UI/UX showcase"
-              className="h-full w-full object-cover"
+              className="h-[320px] w-full object-cover md:h-[560px]"
             />
           </div>
         </section>
 
         {/* Feature Section 2: Dynamic Motion */}
-        <section className="flex flex-col gap-10 py-12 md:flex-row-reverse md:items-center">
-          <div className="flex-1 space-y-4">
+        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row-reverse md:items-stretch">
+          <div className="flex flex-1 flex-col justify-center space-y-4">
             <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
               Dynamic Motion & Visual Storytelling
             </h3>
@@ -92,18 +99,18 @@ export default function DesignPage() {
               alive and memorable.
             </p>
           </div>
-          <div className="flex-1 overflow-hidden rounded-lg">
+          <div className="flex-1 overflow-hidden">
             <img
               src={assets.designImg5}
               alt="Motion & storytelling"
-              className="h-full w-full object-cover"
+              className="h-[320px] w-full object-cover md:h-[560px]"
             />
           </div>
         </section>
 
         {/* Feature Section 3: Creative Strategy */}
-        <section className="flex flex-col gap-10 py-12 md:flex-row md:items-center">
-          <div className="flex-1 space-y-4">
+        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row md:items-stretch">
+          <div className="flex flex-1 flex-col justify-center space-y-4">
             <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
               End-to-End Creative Design Strategy
             </h3>
@@ -114,11 +121,11 @@ export default function DesignPage() {
               strengthen brand presence.
             </p>
           </div>
-          <div className="flex-1 overflow-hidden rounded-lg">
+          <div className="flex-1 overflow-hidden">
             <img
               src={assets.designImg6}
               alt="Design strategy"
-              className="h-full w-full object-cover"
+              className="h-[320px] w-full object-cover md:h-[560px]"
             />
           </div>
         </section>

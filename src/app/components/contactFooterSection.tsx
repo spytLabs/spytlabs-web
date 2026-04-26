@@ -56,14 +56,15 @@ function YoutubeIcon() {
 
 export default function ContactFooterSection() {
   return (
-    <section id="contact" className="px-0 pb-8 pt-0 sm:pb-10" data-node-id="11:6">
+    <section id="contact" className="px-0 pb-8 pt-5 sm:pb-10" data-node-id="11:6">
       <div className="mx-auto w-full">
         <div className="overflow-hidden rounded-lg" data-node-id="6:336">
           <div className="grid min-h-150 grid-cols-1  md:grid-cols-[1.92fr_1fr]">
-            <div className="relative flex flex-col justify-between overflow-hidden bg-[linear-gradient(198deg,#5219db_12%,#120351_85%)] px-8 py-8 sm:px-12 sm:py-10">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,255,255,0.12),transparent_45%)]" />
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_65%,rgba(173,129,255,0.18),transparent_48%)]" />
-
+            <div className="relative flex flex-col justify-between overflow-hidden px-8 py-8 sm:px-12 sm:py-10">
+                <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: "url('/figma-assets/spyt-bg.png')" }}
+                />
               <button
                 type="button"
                 className="relative z-10 w-fit rounded-full bg-[#3200eb] px-7 py-3 text-[clamp(14px,1.1vw,20px)] font-medium text-white"

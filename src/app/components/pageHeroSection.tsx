@@ -7,12 +7,12 @@ interface PageHeroSectionProps {
 
 export default function PageHeroSection({
   title,
-  heroBg = "/figma-assets/hero-bg.jpg",
+  heroBg = "/figma-assets/spyt-bg.png",
 }: PageHeroSectionProps) {
   return (
     <section className="overflow-hidden md:rounded-lg" data-node-id="page-hero">
       <div
-        className="relative flex min-h-55 flex-col justify-between bg-cover bg-center px-6 pb-7 pt-6 text-white sm:min-h-93 sm:px-12 sm:pb-11 sm:pt-7"
+        className="relative flex min-h-55 flex-col justify-between bg-cover bg-center px-6 pb-7 pt-6 text-white sm:min-h-75 sm:px-12 sm:pb-11 sm:pt-7"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(9,6,26,0.18),rgba(9,6,26,0.62))]" />
