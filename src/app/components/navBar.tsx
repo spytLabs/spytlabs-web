@@ -26,8 +26,8 @@ export default function NavBar() {
   const navLinks = [
     { name: "Design", href: "/design" },
     { name: "Automation", href: "/automation" },
-    { name: "Production", href: "#" },
-    { name: "Technology", href: "#" },
+    { name: "Production", href: "/production" },
+    { name: "Technology", href: "/technology" },
     { name: "Blog", href: "/blog" },
   ];
 
@@ -55,12 +55,12 @@ export default function NavBar() {
             <HoverScrollText>{link.name}</HoverScrollText>
           </Link>
         ))}
-        <a
-          href="#contact"
+        <Link
+          href="/contact"
           className="rounded-full bg-[#3200eb] px-5.5 py-2 transition-transform hover:scale-105"
         >
           <HoverScrollText>Contact Us</HoverScrollText>
-        </a>
+        </Link>
       </nav>
 
       {/* Mobile Hamburger Button */}
@@ -110,8 +110,8 @@ export default function NavBar() {
               {link.name}
             </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className={`mt-8 transform rounded-full bg-[#3200eb] px-10 py-3 text-2xl transition-all duration-700 hover:scale-105 ${
               isOpen ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
             }`}
@@ -121,7 +121,7 @@ export default function NavBar() {
             onClick={() => setIsOpen(false)}
           >
             Contact Us
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

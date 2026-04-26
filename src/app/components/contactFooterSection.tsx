@@ -1,14 +1,14 @@
-const portraitImage =
-  "/figma-assets/contact-us-guy.png";
-
+import Link from "next/link";
 import HoverScrollText from "./HoverScrollText";
+
+const portraitImage = "/figma-assets/contact-us-guy.png";
 
 function ArrowIcon() {
   return (
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      className="size-[22px] stroke-[#dbd8ff]"
+      className="size-5.5 stroke-[#dbd8ff]"
       fill="none"
       strokeWidth="2"
       strokeLinecap="round"
@@ -54,62 +54,70 @@ function YoutubeIcon() {
   );
 }
 
-export default function ContactFooterSection() {
+type ContactFooterSectionProps = {
+  showIntroSection?: boolean;
+};
+
+export default function ContactFooterSection({
+  showIntroSection = true,
+}: ContactFooterSectionProps) {
   return (
     <section id="contact" className="px-0 pb-8 pt-5 sm:pb-10" data-node-id="11:6">
       <div className="mx-auto w-full">
-        <div className="overflow-hidden rounded-lg" data-node-id="6:336">
-          <div className="grid min-h-150 grid-cols-1  md:grid-cols-[1.92fr_1fr]">
-            <div className="relative flex flex-col justify-between overflow-hidden px-8 py-8 sm:px-12 sm:py-10">
+        {showIntroSection ? (
+          <div className="overflow-hidden rounded-lg" data-node-id="6:336">
+            <div className="grid min-h-150 grid-cols-1 md:grid-cols-[1.92fr_1fr]">
+              <div className="relative flex flex-col justify-between overflow-hidden px-8 py-8 sm:px-12 sm:py-10">
                 <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: "url('/figma-assets/spyt-bg.png')" }}
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: "url('/figma-assets/spyt-bg.png')" }}
                 />
-              <button
-                type="button"
-                className="relative z-10 w-fit rounded-full bg-[#3200eb] px-7 py-3 text-[clamp(14px,1.1vw,20px)] font-medium text-white"
-              >
-                Contact Us
-              </button>
+                <Link
+                  href="/contact"
+                  className="relative z-10 w-fit rounded-full bg-[#3200eb] px-7 py-3 text-[clamp(14px,1.1vw,20px)] font-medium text-white"
+                >
+                  Contact Us
+                </Link>
 
-              <div className="relative z-10 mt-8">
-                <p className="text-[clamp(28px,2.8vw,40px)] leading-[1.2] font-normal text-[#c1bcfc]">
-                  Let&apos;s Build Something Extraordinary.
-                </p>
-                <div className="group/team mt-1 w-fit">
-                  <div className="h-[clamp(44px,5.8vw,88px)] overflow-hidden">
-                    <div className="flex h-[200%] flex-col transition-transform duration-500 ease-out group-hover/team:-translate-y-1/2">
-                      <div className="h-1/2 items-end hidden md:flex">
-                        <h2 className="section-title font-medium text-[#eae9fe]">
-                          Speak to our team
-                        </h2>
-                      </div>
+                <div className="relative z-10 mt-8">
+                  <p className="text-[clamp(28px,2.8vw,40px)] leading-[1.2] font-normal text-[#c1bcfc]">
+                    Let&apos;s Build Something Extraordinary.
+                  </p>
+                  <Link href="/contact" className="group/team mt-1 w-fit">
+                    <div className="h-[clamp(44px,5.8vw,88px)] overflow-hidden">
+                      <div className="flex h-[200%] flex-col transition-transform duration-500 ease-out group-hover/team:-translate-y-1/2">
+                        <div className="hidden h-1/2 items-end md:flex">
+                          <h2 className="section-title font-medium text-[#eae9fe]">
+                            Speak to our team
+                          </h2>
+                        </div>
 
-                      <div className="flex h-1/2 items-end gap-3 sm:gap-4">
-                        <h2 className="section-title font-medium text-[#eae9fe] max-md:text-[2rem]">
-                          Speak to our team
-                        </h2>
-                        <span className="mb-[0.45em] flex size-7 shrink-0 items-center justify-center rounded-full border-2 border-[#dbd8ff] sm:size-16">
-                          <ArrowIcon />
-                        </span>
+                        <div className="flex h-1/2 items-end gap-3 sm:gap-4">
+                          <h2 className="section-title font-medium text-[#eae9fe] max-md:text-[2rem]">
+                            Speak to our team
+                          </h2>
+                          <span className="mb-[0.45em] flex size-7 shrink-0 items-center justify-center rounded-full border-2 border-[#dbd8ff] sm:size-16">
+                            <ArrowIcon />
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
-            </div>
 
-            <div className="relative min-h-[300px]">
-              <img
-                src={portraitImage}
-                alt="spytLabs team member"
-                className="h-full w-full object-cover"
-              />
+              <div className="relative min-h-75">
+                <img
+                  src={portraitImage}
+                  alt="spytLabs team member"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
 
-        <div className="px-5 pb-0 pt-8 sm:px-11 sm:pt-10" data-node-id="7:341">
+        <div className={`px-5 pb-0 ${showIntroSection ? "pt-8 sm:pt-10" : "pt-0"} sm:px-11`} data-node-id="7:341">
           <div className="border-b border-black/25 pb-5">
             <p className="text-[clamp(14px,1.35vw,24px)] leading-tight font-medium text-[#9c9ba1]">
               EMAIL
@@ -126,11 +134,11 @@ export default function ContactFooterSection() {
             <nav className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-[clamp(24px,2.2vw,32px)] leading-[1.2] font-medium text-[#333339]">
               <a href="/" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Home</HoverScrollText></a>
               <a href="/blog" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Blog</HoverScrollText></a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Design</HoverScrollText></a>
+              <a href="/design" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Design</HoverScrollText></a>
               <a href="/automation" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Automation</HoverScrollText></a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Production</HoverScrollText></a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Technology</HoverScrollText></a>
-              <a href="#contact" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Contact Us</HoverScrollText></a>
+              <a href="/production" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Production</HoverScrollText></a>
+              <a href="/technology" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Technology</HoverScrollText></a>
+              <Link href="/contact" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Contact Us</HoverScrollText></Link>
             </nav>
           </div>
 
