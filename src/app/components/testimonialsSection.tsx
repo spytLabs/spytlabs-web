@@ -1,28 +1,28 @@
 const testimonials = [
   {
-    name: "Nimal Perera",
-    role: "CEO, Nexa Digital Solutions",
+    name: "Jarrod B",
+    role: "Kepri Estate",
     quote:
-      "Working with them felt less like hiring a service and more like gaining a strategic partner. From the very beginning, they took the time to understand our goals and challenges, and translated that into systems that actually deliver results. The impact on our efficiency and growth has been both immediate and long-term.",
-    avatar: "/figma-assets/tertimonial-avt-1.png",
+      "Highly recommended, they did an impeccable job, well inside timelines I requested and to a standard much higher than I expected, including guidance on making things more efficient and effective at every step.",
+    avatar: "/figma-assets/kepri-logo-small.png",
     nodeId: "4:268",
   },
   {
-    name: "Kavindi Fernando",
-    role: "Head of Operations, ElevateX Pvt Ltd",
+    name: "Liam J",
+    role: "CEO, All Seasons SE",
     quote:
-      "Their approach to automation completely changed how we operate. What impressed us most was not just the technology, but the thinking behind it. Every solution was built with scalability in mind, and we have seen a measurable improvement in both productivity and overall performance.",
-    avatar: "/figma-assets/tertimonial-avt-2.png",
+      "They are a pleasure to work with and is extremely good at what they does! I have worked on two projects with them so far and plan to continue working with them. I would highly recommend them.",
+    avatar: "/figma-assets/default-prof-pic.jpg",
     nodeId: "4:315",
   },
-  {
-    name: "Ravi Jayasinghe",
-    role: "Founder, Innovatech Labs",
-    quote:
-      "The team’s expertise in digital innovation is truly next-level. They didn’t just implement tools; they transformed our entire approach to digital marketing. The results speak for themselves – we’ve seen significant growth and a much stronger connection with our audience.",
-    avatar: "/figma-assets/tertimonial-avt-3.png",
-    nodeId: "4:316",
-  }
+  // {
+  //   name: "Ravi Jayasinghe",
+  //   role: "Founder, Innovatech Labs",
+  //   quote:
+  //     "The team’s expertise in digital innovation is truly next-level. They didn’t just implement tools; they transformed our entire approach to digital marketing. The results speak for themselves – we’ve seen significant growth and a much stronger connection with our audience.",
+  //   avatar: "/figma-assets/tertimonial-avt-3.png",
+  //   nodeId: "4:316",
+  // }
 ];
 
 export default function TestimonialsSection() {
