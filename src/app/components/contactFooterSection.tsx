@@ -123,7 +123,9 @@ export default function ContactFooterSection({
               EMAIL
             </p>
             <p className="mt-2 text-[clamp(30px,2.9vw,40px)] leading-[1.12] font-medium text-[#333339]">
-              <HoverScrollText>hello@spytlabs.com</HoverScrollText>
+              <a href="mailto:hello@spytlabs.com" target="_blank">
+                <HoverScrollText>hello@spytlabs.com</HoverScrollText>
+              </a>
             </p>
           </div>
 
@@ -133,10 +135,10 @@ export default function ContactFooterSection({
             </p>
             <nav className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-[clamp(24px,2.2vw,32px)] leading-[1.2] font-medium text-[#333339]">
               <a href="/" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Home</HoverScrollText></a>
-              <a href="/blog" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Blog</HoverScrollText></a>
+              {/* <a href="/blog" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Blog</HoverScrollText></a> */}
               <a href="/design" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Design</HoverScrollText></a>
               <a href="/automation" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Automation</HoverScrollText></a>
-              <a href="/production" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Production</HoverScrollText></a>
+              <a href="/productions" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Production</HoverScrollText></a>
               <a href="/technology" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Technology</HoverScrollText></a>
               <Link href="/contact" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Contact Us</HoverScrollText></Link>
             </nav>
@@ -157,10 +159,10 @@ export default function ContactFooterSection({
               ©Copyright 2026 spytLabs. All Rights Reserved.
             </p>
             <div className="flex items-center gap-5 text-[#0f1014]">
-              <a href="#" aria-label="Facebook" className="transition-[color,transform] duration-300 ease-out hover:scale-105 hover:text-[#1d0f73]"><FacebookIcon /></a>
-              <a href="#" aria-label="Instagram" className="transition-[color,transform] duration-300 ease-out hover:scale-105 hover:text-[#1d0f73]"><InstagramIcon /></a>
-              <a href="#" aria-label="LinkedIn" className="transition-[color,transform] duration-300 ease-out hover:scale-105 hover:text-[#1d0f73]"><LinkedinIcon /></a>
-              <a href="#" aria-label="YouTube" className="transition-[color,transform] duration-300 ease-out hover:scale-105 hover:text-[#1d0f73]"><YoutubeIcon /></a>
+              <a href="#" aria-label="Facebook" className="transition-[color,transform] duration-300 ease-out hover:scale-105 hover:text-[#1d0f73]" target="_blank"><FacebookIcon /></a>
+              <a href="https://www.instagram.com/spytlabs/" aria-label="Instagram" className="transition-[color,transform] duration-300 ease-out hover:scale-105 hover:text-[#1d0f73]" target="_blank"><InstagramIcon /></a>
+              <a href="#" aria-label="LinkedIn" className="transition-[color,transform] duration-300 ease-out hover:scale-105 hover:text-[#1d0f73]" target="_blank"><LinkedinIcon /></a>
+              <a href="#" aria-label="YouTube" className="transition-[color,transform] duration-300 ease-out hover:scale-105 hover:text-[#1d0f73]" target="_blank"><YoutubeIcon /></a>
             </div>
           </div>
         </div>

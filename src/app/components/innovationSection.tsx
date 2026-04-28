@@ -17,13 +17,13 @@ const cards = [
   {
     title: "Production",
     nodeId: "3:243",
-    href: "#",
+    href: "/productions",
     videoSrc: "/figma-assets/spyt-prod-vid-bg-3.mp4",
   },
   {
     title: "Technology",
     nodeId: "3:244",
-    href: "#",
+    href: "/technology",
     videoSrc: "/figma-assets/spyt-web-bg-2.webm",
   }
 ];
@@ -74,7 +74,7 @@ export default function InnovationSection() {
               </Link>
             );
           })}
-          <div className="w-[1px] shrink-0"></div>
+          <div className="w-px shrink-0"></div>
         </div>
       </div>
     </section>

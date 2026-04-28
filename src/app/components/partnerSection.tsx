@@ -2,7 +2,12 @@ export default function PartnerSection() {
   const assets = {
     heroBg: "/figma-assets/hero-bg.jpg",
     logo: "/figma-assets/logo.png",
-    google: "/figma-assets/google.png",
+    // google: "/figma-assets/google.png",
+    kepri: "/figma-assets/kepri-logo-black.png",
+    vincent: "/figma-assets/vincent-pelle-logo.png",
+    linkup: "/figma-assets/linkup-logo-mono.png",
+    weeranayaka: "/figma-assets/weeranayaka-gems-black-text.png",
+
     amazon: "/figma-assets/amazon.png",
     oracle: "/figma-assets/oracle.png",
     ebay: "/figma-assets/ebay.png",
@@ -12,11 +17,13 @@ export default function PartnerSection() {
   };
 
   const partners = [
-    { src: assets.google, alt: "Google" },
-    { src: assets.amazon, alt: "Amazon" },
-    { src: assets.oracle, alt: "Oracle" },
-    { src: assets.ebay, alt: "eBay" },
-    { src: assets.netflix, alt: "Netflix" },
+    { src: assets.kepri, alt: "Kepri" },
+    { src: assets.vincent, alt: "Vincent Pelle" },
+    { src: assets.linkup, alt: "LinkUp" },
+    { src: assets.weeranayaka, alt: "Weeranayaka Gems" },
+    // { src: assets.oracle, alt: "Oracle" },
+    // { src: assets.ebay, alt: "eBay" },
+    // { src: assets.netflix, alt: "Netflix" },
   ];
 
 
