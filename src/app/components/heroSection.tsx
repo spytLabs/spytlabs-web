@@ -6,7 +6,7 @@ export default function HeroSecion() {
     heroBg: "/figma-assets/spyt-bg.png",
     heroBgVideo: "/figma-assets/spyt-web-bg-2.webm",
     logo: "/figma-assets/logo.png",
-    google: "/figma-assets/google.png",
+    kepri: "/figma-assets/kepri-logo-large.png",
     amazon: "/figma-assets/amazon.png",
     oracle: "/figma-assets/oracle.png",
     ebay: "/figma-assets/ebay.png",

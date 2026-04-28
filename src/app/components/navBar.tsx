@@ -26,9 +26,9 @@ export default function NavBar() {
   const navLinks = [
     { name: "Design", href: "/design" },
     { name: "Automation", href: "/automation" },
-    { name: "Production", href: "/production" },
+    { name: "Production", href: "/productions" },
     { name: "Technology", href: "/technology" },
-    { name: "Blog", href: "/blog" },
+    // { name: "Blog", href: "/blog" },
   ];
 
   return (
