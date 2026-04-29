@@ -150,7 +150,7 @@ export default function ContactFooterSection({
             </p>
             <div className="mt-2 flex flex-wrap gap-x-8 gap-y-2 text-[clamp(24px,2.2vw,32px)] leading-[1.2] font-medium text-[#333339]">
               <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Privacy Policy</HoverScrollText></a>
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Terms of Service</HoverScrollText></a>
+              <Link href="/terms-of-service" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Terms of Service</HoverScrollText></Link>
             </div>
           </div>
 
