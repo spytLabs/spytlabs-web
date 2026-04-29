@@ -8,7 +8,7 @@ function ArrowIcon() {
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      className="size-5.5 stroke-[#dbd8ff]"
+      className="size-4.5 overflow-visible stroke-[#dbd8ff] sm:size-5"
       fill="none"
       strokeWidth="2"
       strokeLinecap="round"
@@ -84,7 +84,7 @@ export default function ContactFooterSection({
                     Let&apos;s Build Something Extraordinary.
                   </p>
                   <Link href="/contact" className="group/team mt-1 w-fit">
-                    <div className="h-[clamp(44px,5.8vw,88px)] overflow-hidden">
+                    <div className="h-[clamp(56px,6vw,104px)] overflow-hidden">
                       <div className="flex h-[200%] flex-col transition-transform duration-500 ease-out group-hover/team:-translate-y-1/2">
                         <div className="hidden h-1/2 items-end md:flex">
                           <h2 className="section-title font-medium text-[#eae9fe]">
@@ -96,7 +96,7 @@ export default function ContactFooterSection({
                           <h2 className="section-title font-medium text-[#eae9fe] max-md:text-[2rem]">
                             Speak to our team
                           </h2>
-                          <span className="mb-[0.45em] flex size-7 shrink-0 items-center justify-center rounded-full border-2 border-[#dbd8ff] sm:size-16">
+                          <span className="flex size-8 shrink-0 items-center justify-center rounded-full border-2 border-[#dbd8ff] sm:size-12 lg:size-16">
                             <ArrowIcon />
                           </span>
                         </div>
