@@ -15,15 +15,15 @@ const testimonials = [
     avatar: "/figma-assets/default-prof-pic.jpg",
     nodeId: "4:315",
   },
-  // {
-  //   name: "Ravi Jayasinghe",
-  //   role: "Founder, Innovatech Labs",
-  //   quote:
-  //     "The team’s expertise in digital innovation is truly next-level. They didn’t just implement tools; they transformed our entire approach to digital marketing. The results speak for themselves – we’ve seen significant growth and a much stronger connection with our audience.",
-  //   avatar: "/figma-assets/tertimonial-avt-3.png",
-  //   nodeId: "4:316",
-  // }
-];
+  {
+    name: "Ravi Jayasinghe",
+    role: "Founder, OMC",
+    quote:
+      "SpytLabs is an excellent team to work with. They helped us create high-quality digital conetents for our socials and played a key role in improving our presence on YouTube. We truly enjoyed working with them and look forward to collaborating again in the future.",
+    avatar: "/figma-assets/tertimonial-avt-3.png",
+    nodeId: "4:316",
+  }
+];  
 
 export default function TestimonialsSection() {
   return (
@@ -55,14 +55,14 @@ export default function TestimonialsSection() {
           {testimonials.map((item) => (
             <article
               key={item.name}
-              className="relative flex w-[85%] shrink-0 snap-center min-h-[330px] flex-col justify-between border border-black/30 p-6 sm:min-h-[420px] sm:w-[60%] lg:w-[45%] sm:p-10"
+              className="relative flex w-[85%] shrink-0 snap-center min-h-[330px] flex-col justify-between border border-black/30 p-6 sm:min-h-[380px] sm:w-[60%] lg:w-[45%] sm:p-10"
               data-node-id={item.nodeId}
             >
               <div className="flex items-center gap-5 sm:gap-8" data-node-id="4:265">
                 <img
                   src={item.avatar}
                   alt={item.name}
-                  className="size-[65px] rounded-full object-cover sm:size-[100px]"
+                  className="size-[65px] rounded-full object-cover sm:size-[80px]"
                 />
                 <div className="min-w-0">
                   <h3 className="text-[clamp(30px,1.8vw,44px)] leading-[1.1] font-medium text-black">

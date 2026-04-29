@@ -38,7 +38,7 @@ export default function PartnerSection() {
             key={partner.alt}
             src={partner.src}
             alt={partner.alt}
-            className="max-h-10.5 h-auto w-auto min-w-[80px] max-w-[28%] sm:max-w-[18%] shrink object-contain opacity-[0.5] select-none flex-1"
+            className="max-h-13 h-auto w-auto min-w-[80px] max-w-[28%] sm:max-w-[18%] shrink object-contain opacity-[0.5] select-none flex-1"
             draggable="false"
           />
         ))}
