@@ -12,7 +12,7 @@ const assets = {
 
 export default function AutomationPage() {
   return (
-    <main className="mt-5 mx-5 mb-10 bg-white box-border max-[1060px]:m-0">
+    <main className="mt-2 mx-2 mb-10 bg-white box-border ">
       {/* Hero Section */}
       <PageHeroSection title="Automation." />
 

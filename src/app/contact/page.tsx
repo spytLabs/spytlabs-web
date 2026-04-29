@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="mt-5 mx-5 mb-10 box-border bg-white max-[1060px]:m-0">
+    <main className="mt-2 mx-2 mb-10 bg-white box-border ">
       <PageHeroSection title="Contact." />
 
       <section className="mx-auto w-full max-w-352.5 px-5 py-10 sm:px-11 sm:py-14">

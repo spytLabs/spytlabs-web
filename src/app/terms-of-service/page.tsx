@@ -153,122 +153,17 @@ export default function TermsOfServicePage() {
   ];
 
   return (
-    <main className="mt-5 mx-5 mb-10 bg-white box-border max-[1060px]:m-0">
+    <main className="mt-2 mx-2 mb-10 bg-white box-border ">
       <PageHeroSection title="Terms of Service." />
 
       <div className="mx-auto w-full max-w-[1410px] px-5 sm:px-11">
-        <section className="py-16 md:pb-16 pb-8 text-center sm:py-20">
-          <p className="mx-auto text-[clamp(13px,1vw,18px)] font-medium uppercase tracking-[0.32em] text-[#2d0da0]">
-            Turning vision into code, and code into growth.
-          </p>
-          <h2 className="mx-auto mt-4 max-w-4xl text-[clamp(40px,5.5vw,65px)] leading-[1.05] font-semibold tracking-[-0.04em] text-black">
-            Engineering for the Modern Web
-            <span className="block text-[#2d0da0]">With clarity and intent.</span>
-          </h2>
-          <p className="mx-auto mt-6 max-w-4xl text-[clamp(14px,1.45vw,28px)] leading-[1.45] font-normal text-[#45454a]">
-            At spytLabs, we build the digital foundations that allow businesses
-            to scale. We specialize in clean, high-performance software
-            engineering, focusing on tools that are as functional as they are
-            reliable.
-          </p>
-          <p className="mx-auto mt-4 max-w-4xl text-[clamp(14px,1.35vw,24px)] leading-[1.55] font-normal text-[#45454a]">
-            Our team bridges complex technical requirements and intuitive user
-            experiences. We do not just build features; we build scalable
-            systems designed to handle growth from day one.
-          </p>
-        </section>
 
-        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-clip py-12">
-          <section className="mx-auto w-[170vw] sm:w-[150vw] lg:w-[120vw]">
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-10">
-              <div className="col-start-1 overflow-hidden">
-                <img
-                  src={assets.grid1}
-                  alt="Technology showcase 1"
-                  className="h-55 w-full object-cover sm:h-70 lg:h-125"
-                />
-              </div>
 
-              <div className="col-start-2 overflow-hidden">
-                <img
-                  src={assets.grid2}
-                  alt="Technology showcase 2"
-                  className="h-55 w-full object-cover sm:h-70 lg:h-125"
-                />
-              </div>
 
-              <div className="col-start-3 overflow-hidden">
-                <img
-                  src={assets.grid3}
-                  alt="Technology showcase 3"
-                  className="h-55 w-full object-cover sm:h-70 lg:h-125"
-                />
-              </div>
-            </div>
-          </section>
-        </div>
 
-        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Web Platforms &amp; Applications
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              Custom-built, responsive web solutions using modern frameworks.
-              We prioritize speed, SEO, and a seamless experience across all
-              devices.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.engineering}
-              alt="Web platforms and applications"
-              className="h-80 w-full object-cover md:h-140"
-            />
-          </div>
-        </section>
 
-        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row-reverse md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Creative Production
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              At spytLabs, we know that great technology needs a great story.
-              Our creative production team builds striking visual narratives
-              that connect with your audience and give your business a distinct
-              and professional voice.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.creative}
-              alt="Creative production"
-              className="h-80 w-full object-cover md:h-140"
-            />
-          </div>
-        </section>
 
-        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              The spytLabs Approach to Media
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              Strategic storytelling, cohesive design, and startup agility
-              guide every shoot and every asset. We deliver high-impact,
-              professional-grade production without the bloated timelines of
-              traditional agencies.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.media}
-              alt="Media and art direction"
-              className="h-80 w-full object-cover md:h-140"
-            />
-          </div>
-        </section>
+
 
         <section className="py-12 md:py-16">
           <div className="mb-8 max-w-4xl">
@@ -292,44 +187,7 @@ export default function TermsOfServicePage() {
           </div>
         </section>
 
-        <section className="py-8 sm:py-12">
-          <div className="grid gap-8 rounded-lg bg-[#f7f6ff] px-6 py-8 sm:px-10 sm:py-10 md:grid-cols-2 md:items-start">
-            <div>
-              <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-                What We Build
-              </p>
-              <div className="mt-5 space-y-5">
-                {services.map((service) => (
-                  <ServiceItem key={service.title} {...service} />
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-6 md:pl-6">
-              <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-                Our Creative Services
-              </p>
-              <div className="space-y-5">
-                <ServiceItem
-                  title="Branding & Visual Identity"
-                  description="We develop comprehensive visual identities, including color palettes, typography, and brand guidelines that give your business a distinct and professional voice in the market."
-                />
-                <ServiceItem
-                  title="Commercial & Video Production"
-                  description="From structured promotional commercials to authentic founder pitches, we produce high-quality video content designed to convert viewers into clients."
-                />
-                <ServiceItem
-                  title="Professional Photoshoots"
-                  description="We handle product catalogs, corporate team profiles, and lifestyle shoots to ensure your websites and social channels look sharp and credible."
-                />
-                <ServiceItem
-                  title="Digital Art Direction"
-                  description="We direct the creative vision so every visual element, from your website UI to your marketing materials, tells a unified story across all platforms."
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+      
 
         <div className="py-8 sm:py-12" />
       </div>
