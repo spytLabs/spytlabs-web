@@ -13,7 +13,7 @@ const assets = {
 
 export default function ProductionsPage() {
   return (
-    <main className="mt-5 mx-5 mb-10 box-border bg-white max-[1060px]:m-0">
+    <main className="mt-2 mx-2 mb-10 bg-white box-border ">
       <PageHeroSection title="Production." />
 
       <div className="mx-auto w-full max-w-[1410px] px-5 sm:px-11">
