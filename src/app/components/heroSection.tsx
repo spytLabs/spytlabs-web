@@ -42,8 +42,8 @@ export default function HeroSecion() {
             className="mt-2 mb-0 flex flex-col text-[clamp(48px,6.55vw,96px)] leading-[1.08] font-semibold tracking-[-0.015em] max-[640px]:text-[clamp(32px,12vw,62px)] select-none"
             data-node-id="2:3"
           >
-            <span>We don&apos;t follow trends</span>
-            <span>-we create them.</span>
+            <span>We don&apos;t follow trends.</span>
+            <span>We create them.</span>
           </h1>
         </div>
       </section>
