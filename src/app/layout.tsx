@@ -13,8 +13,61 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "spytLabs",
-  description: "spytLabs homepage built from the Figma design",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  ),
+  title: {
+    default: "spytLabs",
+    template: "%s | spytLabs",
+  },
+  description:
+    "spytLabs provides AI automation, design, productions, and technical services for ambitious teams.",
+  keywords: [
+    "spytLabs",
+    "AI automation",
+    "design services",
+    "productions",
+    "commercials",
+    "social media",
+    "technical services",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "spytLabs",
+    title: "spytLabs",
+    description:
+      "spytLabs provides AI automation, design, productions, and technical services for ambitious teams.",
+    images: [
+      {
+        url: "/figma-assets/spyt-bg.png",
+        width: 1200,
+        height: 630,
+        alt: "spytLabs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "spytLabs",
+    description:
+      "spytLabs provides AI automation, design, productions, and technical services for ambitious teams.",
+    images: ["/figma-assets/spyt-bg.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
 };
 
 export default function RootLayout({
