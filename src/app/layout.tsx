@@ -58,6 +58,9 @@ export const metadata: Metadata = {
       "spytLabs provides AI automation, design, productions, and technical services for ambitious teams.",
     images: ["/figma-assets/spyt-bg.png"],
   },
+  icons: {
+    icon: "/favicon.png",
+  },
   robots: {
     index: true,
     follow: true,
