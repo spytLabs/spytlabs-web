@@ -68,6 +68,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
       "max-video-preview": -1,
     },
+  },
 };
 
 export default function RootLayout({
