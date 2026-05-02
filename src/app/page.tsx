@@ -8,14 +8,14 @@ import TestimonialsSection from "./components/testimonialsSection";
 import ContactFooterSection from "./components/contactFooterSection";
 
 export const metadata: Metadata = {
-  title: "AI Automation, Design, Productions & Technical Services",
+  title: "spytLabs - AI Automation, Design, Productions & Technical Services",
   description:
     "spytLabs helps teams with AI automation, design, productions for commercials and social media, and technical delivery.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "AI Automation, Design, Productions & Technical Services",
+    title: "spytLabs - AI Automation, Design, Productions & Technical Services",
     description:
       "spytLabs helps teams with AI automation, design, productions for commercials and social media, and technical delivery.",
     url: "/",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Automation, Design, Productions & Technical Services",
+    title: "spytLabs - AI Automation, Design, Productions & Technical Services",
     description:
       "spytLabs helps teams with AI automation, design, productions for commercials and social media, and technical delivery.",
     images: ["/figma-assets/spyt-bg.png"],
