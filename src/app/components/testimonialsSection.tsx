@@ -19,7 +19,7 @@ const testimonials = [
     name: "Ole Henrik",
     role: "Founder, OMC",
     quote:
-      "SpytLabs is an excellent team to work with. They helped us create high-quality digital conetents for our socials and played a key role in improving our presence on YouTube. We truly enjoyed working with them and look forward to collaborating again in the future.",
+      "spytLabs is an excellent team to work with. They helped us create high-quality digital conetents for our socials and played a key role in improving our presence on YouTube. We truly enjoyed working with them and look forward to collaborating again in the future.",
     avatar: "/figma-assets/ole.jpeg",
     nodeId: "4:316",
   }

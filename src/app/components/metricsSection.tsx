@@ -61,7 +61,7 @@ export default function MetricsSection() {
             data-node-id="3:179"
           >
             A clear measure of the business value generated through our
-            automation systems, reflecting real financial impact and performance
+            automation systems and marketing strategies, reflecting real financial impact and performance
             gains across client operations.
           </p>
         </article>

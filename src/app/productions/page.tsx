@@ -72,10 +72,7 @@ export default function ProductionsPage() {
               Commercial &amp; Video Production
             </h3>
             <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              Video is the most powerful way to communicate your value. From
-              structured promotional commercials to authentic founder pitches
-              that highlight your origin and expertise, we produce high-quality
-              video content designed to convert viewers into clients.
+            Video is the most powerful way to communicate your value. From structured promotional commercials and integrated marketing campaigns to high-impact social media content, we produce high-quality video designed to highlight your expertise and convert viewers into clients.
             </p>
           </div>
           <div className="flex-1 overflow-hidden bg-black">

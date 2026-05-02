@@ -36,7 +36,7 @@ export default function HeroSecion() {
           <NavBar />
 
           <p className="m-0 text-[clamp(14px,1vw,20px)] font-medium tracking-[0] text-gray-300 select-none" data-node-id="2:46">
-            BEYOND MARKETING. INTO THE FUTURE
+            YOUR ONE STOP TECH PARTNER.
           </p>
           <h1
             className="mt-2 mb-0 flex flex-col text-[clamp(48px,6.55vw,96px)] leading-[1.08] font-semibold tracking-[-0.015em] max-[640px]:text-[clamp(32px,12vw,62px)] select-none"
