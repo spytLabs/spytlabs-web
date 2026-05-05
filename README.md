@@ -34,3 +34,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Deploy on Cloudflare Workers
+
+This project is configured for the OpenNext Cloudflare adapter.
+
+1. Set the Sanity and contact form environment variables in your Cloudflare deployment: `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `NEXT_PUBLIC_SANITY_API_VERSION`, and `NEXT_PUBLIC_GOOGLE_SCRIPT_URL`.
+2. Preview locally with `pnpm preview`.
+3. Deploy with `pnpm deploy`.
