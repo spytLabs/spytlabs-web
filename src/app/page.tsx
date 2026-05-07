@@ -47,7 +47,7 @@ export default function Home() {
       <HeroSecion />
       <PartnerSection />
       <MetricsSection />
-      {/* <FutureSection /> */}
+      <FutureSection />
       <InnovationSection />
       <TestimonialsSection />
       <ContactFooterSection />

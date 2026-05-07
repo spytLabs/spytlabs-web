@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 
 const videoSrc =
-  "https://res.cloudinary.com/dh2ej5ziz/video/upload/v1776143021/Remade_Founder_Video_-_YC_S24_Application_Accepted_dp0ej8.mp4";
+  "https://res.cloudinary.com/drj8voqyf/video/upload/v1778127992/founders_video_final_k7e0kk.mp4";
 
 function PlayIcon() {
   return (
