@@ -29,6 +29,8 @@ export const metadata: Metadata = {
     "commercials",
     "social media",
     "technical services",
+    "Sri Lanka",
+    "Sri Lankan"
   ],
   alternates: {
     canonical: "/",
