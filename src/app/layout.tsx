@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { getSiteUrl } from "@/lib/siteUrl";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  ),
+  metadataBase: new URL("https://www.spytlabs.com"),
   title: {
     default: "spytLabs",
     template: "%s | spytLabs",
@@ -59,7 +58,17 @@ export const metadata: Metadata = {
     images: ["/figma-assets/spyt-bg.png"],
   },
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      {
+        url: "/icon.png",
+        type: "image/png",
+      },
+      {
+        url: "/favicon.png",
+        type: "image/png",
+      },
+    ],
+    apple: "/apple-icon.png",
   },
   robots: {
     index: true,

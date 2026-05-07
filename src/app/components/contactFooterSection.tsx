@@ -134,12 +134,12 @@ export default function ContactFooterSection({
               NAVIGATION
             </p>
             <nav className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-[clamp(24px,2.2vw,32px)] leading-[1.2] font-medium text-[#333339]">
-              <a href="/" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Home</HoverScrollText></a>
-              {/* <a href="/blog" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Blog</HoverScrollText></a> */}
-              <a href="/design" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Design</HoverScrollText></a>
-              <a href="/automation" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Automation</HoverScrollText></a>
-              <a href="/productions" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Production</HoverScrollText></a>
-              <a href="/technology" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Technology</HoverScrollText></a>
+              <Link href="/" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Home</HoverScrollText></Link>
+              {/* <Link href="/blog" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Blog</HoverScrollText></Link> */}
+              <Link href="/design" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Design</HoverScrollText></Link>
+              <Link href="/automation" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Automation</HoverScrollText></Link>
+              <Link href="/productions" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Production</HoverScrollText></Link>
+              <Link href="/technology" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Technology</HoverScrollText></Link>
               <Link href="/contact" className="transition-colors duration-300 ease-out hover:text-[#1d0f73]"><HoverScrollText>Contact Us</HoverScrollText></Link>
             </nav>
           </div>

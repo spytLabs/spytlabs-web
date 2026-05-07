@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import ContactFooterSection from "../components/contactFooterSection";
 import PageHeroSection from "../components/pageHeroSection";
 
@@ -196,3 +197,28 @@ export default function TermsOfServicePage() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Terms of Service | spytLabs",
+  description: "Terms and conditions for use of spytLabs services and website.",
+  alternates: { canonical: "/terms-of-service" },
+  openGraph: {
+    title: "Terms of Service | spytLabs",
+    description: "Terms and conditions for use of spytLabs services and website.",
+    url: "/terms-of-service",
+    images: [
+      {
+        url: "/figma-assets/spyt-bg.png",
+        width: 1200,
+        height: 630,
+        alt: "spytLabs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | spytLabs",
+    description: "Terms and conditions for use of spytLabs services and website.",
+    images: ["/figma-assets/spyt-bg.png"],
+  },
+};

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import ContactFooterSection from "../components/contactFooterSection";
 import PageHeroSection from "../components/pageHeroSection";
 
@@ -138,3 +139,31 @@ export default function TechnologyPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Technology | spytLabs",
+  description:
+    "Engineering and technical services from spytLabs: platforms, mobile, infrastructure, and consulting.",
+  alternates: { canonical: "/technology" },
+  openGraph: {
+    title: "Technology | spytLabs",
+    description:
+      "Engineering and technical services from spytLabs: platforms, mobile, infrastructure, and consulting.",
+    url: "/technology",
+    images: [
+      {
+        url: "/figma-assets/path-digital-tR0jvlsmCuQ-unsplash.jpg",
+        width: 1200,
+        height: 630,
+        alt: "spytLabs technology",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technology | spytLabs",
+    description:
+      "Engineering and technical services from spytLabs: platforms, mobile, infrastructure, and consulting.",
+    images: ["/figma-assets/path-digital-tR0jvlsmCuQ-unsplash.jpg"],
+  },
+};

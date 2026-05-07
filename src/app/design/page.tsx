@@ -1,4 +1,5 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+// Link not required in this page
 import ContactFooterSection from "../components/contactFooterSection";
 import PageHeroSection from "../components/pageHeroSection";
 
@@ -139,3 +140,31 @@ export default function DesignPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Design | spytLabs",
+  description:
+    "Design services at spytLabs: product design, UI/UX, motion, and creative strategy.",
+  alternates: { canonical: "/design" },
+  openGraph: {
+    title: "Design | spytLabs",
+    description:
+      "Design services at spytLabs: product design, UI/UX, motion, and creative strategy.",
+    url: "/design",
+    images: [
+      {
+        url: "/figma-assets/design-img-1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "spytLabs design",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Design | spytLabs",
+    description:
+      "Design services at spytLabs: product design, UI/UX, motion, and creative strategy.",
+    images: ["/figma-assets/design-img-1.jpg"],
+  },
+};
