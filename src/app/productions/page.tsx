@@ -59,7 +59,7 @@ export default function ProductionsPage() {
             <img
               src={assets.branding}
               alt="Branding and visual identity"
-              className="h-[320px] w-full object-cover md:h-[560px]"
+              className="h-[420px] w-full object-cover md:h-[560px]"
             />
           </div>
         </section>
@@ -83,7 +83,7 @@ export default function ProductionsPage() {
               loop
               muted
               playsInline
-              className="h-[320px] w-full object-cover md:h-[560px]"
+              className="h-[420px] w-full object-cover md:h-[560px]"
             />
           </div>
         </section>
@@ -107,7 +107,7 @@ export default function ProductionsPage() {
             <img
               src={assets.photo}
               alt="Professional photoshoot"
-              className="h-[320px] w-full object-cover md:h-[560px]"
+              className="h-[420px] w-full object-cover md:h-[560px]"
             />
           </div>
         </section>
@@ -131,7 +131,7 @@ export default function ProductionsPage() {
             <img
               src={assets.artDirection}
               alt="Digital art direction"
-              className="h-[320px] w-full object-cover md:h-[560px]"
+              className="h-[420px] w-full object-cover md:h-[560px]"
             />
           </div>
         </section>

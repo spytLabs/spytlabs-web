@@ -145,7 +145,7 @@ export default function FutureSection() {
           </p>
         </header>
 
-        <div className="group relative aspect-[1320/720] w-[80%] max-w-[1100px] mx-auto overflow-hidden bg-[#dbd8e7]" data-node-id="2:163">
+        <div className="group relative aspect-[1320/720] w-full sm:w-[80%] max-w-[1100px] mx-auto overflow-hidden bg-[#dbd8e7]" data-node-id="2:163">
           <video
             ref={videoRef}
             className="h-full w-full object-cover"
@@ -179,7 +179,7 @@ export default function FutureSection() {
             aria-pressed={isPlaying}
             onClick={togglePlayback}
           >
-            <span className="flex size-[clamp(88px,10vw,141px)] items-center justify-center rounded-full border-[4px] border-white bg-white/5 shadow-[0_12px_32px_rgba(0,0,0,0.14)] backdrop-blur-[1px] transition-transform duration-200 hover:scale-105">
+            <span className="flex size-[clamp(56px,16vw,96px)] items-center justify-center rounded-full border-2 sm:border-[4px] border-white bg-white/5 shadow-[0_8px_24px_rgba(0,0,0,0.14)] backdrop-blur-[1px] transition-transform duration-200 hover:scale-105">
               {isEnded ? <ReplayIcon /> : (isPlaying ? <PauseIcon /> : <PlayIcon />)}
             </span>
           </button>

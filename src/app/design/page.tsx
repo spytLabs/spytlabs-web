@@ -79,11 +79,11 @@ export default function DesignPage() {
             </p>
           </div>
           <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.designImg4}
-              alt="UI/UX showcase"
-              className="h-[320px] w-full object-cover md:h-[560px]"
-            />
+              <img
+                src={assets.designImg4}
+                alt="UI/UX showcase"
+                className="h-[420px] w-full object-cover md:h-[560px]"
+              />
           </div>
         </section>
 
@@ -101,11 +101,11 @@ export default function DesignPage() {
             </p>
           </div>
           <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.designImg5}
-              alt="Motion & storytelling"
-              className="h-[320px] w-full object-cover md:h-[560px]"
-            />
+              <img
+                src={assets.designImg5}
+                alt="Motion & storytelling"
+                className="h-[420px] w-full object-cover md:h-[560px]"
+              />
           </div>
         </section>
 
@@ -123,11 +123,11 @@ export default function DesignPage() {
             </p>
           </div>
           <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.designImg6}
-              alt="Design strategy"
-              className="h-[320px] w-full object-cover md:h-[560px]"
-            />
+              <img
+                src={assets.designImg6}
+                alt="Design strategy"
+                className="h-[420px] w-full object-cover md:h-[560px]"
+              />
           </div>
         </section>
 
