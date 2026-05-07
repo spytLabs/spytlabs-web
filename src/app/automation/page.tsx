@@ -1,4 +1,4 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 import ContactFooterSection from "../components/contactFooterSection";
 import PageHeroSection from "../components/pageHeroSection";
 
@@ -26,7 +26,7 @@ export default function AutomationPage() {
           </h2>
           <p className="mx-auto mt-6 max-w-4xl text-[clamp(14px,1.5vw,30px)] leading-[1.3] font-normal text-[#45454a]">
             We build intelligent automation systems that handle the work your
-            team doesn't want to do.
+            team doesn&apos;t want to do.
             <br />
             From order to customer service, streamline what matters.
           </p>
@@ -119,7 +119,7 @@ export default function AutomationPage() {
             <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
               Inventory management with predictive algorithms. Lead generation
               and CRM automation with intelligent scoring. Invoice and document
-              processing with OCR and data extraction. We've built automation
+              processing with OCR and data extraction. We&apos;ve built automation
               systems across every department—finance, sales, support, and
               operations. Whatever your workflow, we can automate it.
             </p>
@@ -142,3 +142,31 @@ export default function AutomationPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Automation | spytLabs",
+  description:
+    "AI-powered automation and workflows from spytLabs: order management, customer service, and integration.",
+  alternates: { canonical: "/automation" },
+  openGraph: {
+    title: "Automation | spytLabs",
+    description:
+      "AI-powered automation and workflows from spytLabs: order management, customer service, and integration.",
+    url: "/automation",
+    images: [
+      {
+        url: "/figma-assets/automation-team.jpg",
+        width: 1200,
+        height: 630,
+        alt: "spytLabs automation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Automation | spytLabs",
+    description:
+      "AI-powered automation and workflows from spytLabs: order management, customer service, and integration.",
+    images: ["/figma-assets/automation-team.jpg"],
+  },
+};

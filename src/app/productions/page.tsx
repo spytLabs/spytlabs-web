@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import ContactFooterSection from "../components/contactFooterSection";
 import PageHeroSection from "../components/pageHeroSection";
 
@@ -144,3 +145,31 @@ export default function ProductionsPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Productions | spytLabs",
+  description:
+    "Video production, commercial shoots, and creative direction from spytLabs.",
+  alternates: { canonical: "/productions" },
+  openGraph: {
+    title: "Productions | spytLabs",
+    description:
+      "Video production, commercial shoots, and creative direction from spytLabs.",
+    url: "/productions",
+    images: [
+      {
+        url: "/figma-assets/szabo-viktor-NI_fJ15rIfI-unsplash.jpg",
+        width: 1200,
+        height: 630,
+        alt: "spytLabs productions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Productions | spytLabs",
+    description:
+      "Video production, commercial shoots, and creative direction from spytLabs.",
+    images: ["/figma-assets/szabo-viktor-NI_fJ15rIfI-unsplash.jpg"],
+  },
+};

@@ -6,6 +6,26 @@ import ContactForm from "./contactForm";
 export const metadata: Metadata = {
   title: "Contact | spytLabs",
   description: "Reach out to the spytLabs team.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | spytLabs",
+    description: "Reach out to the spytLabs team.",
+    url: "/contact",
+    images: [
+      {
+        url: "/figma-assets/contact-us-guy.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact spytLabs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | spytLabs",
+    description: "Reach out to the spytLabs team.",
+    images: ["/figma-assets/contact-us-guy.jpg"],
+  },
 };
 
 export default function ContactPage() {
