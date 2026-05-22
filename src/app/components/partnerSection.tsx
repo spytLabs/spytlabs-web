@@ -6,6 +6,7 @@ export default function PartnerSection() {
     kepri: "/figma-assets/kepri-logo-black.png",
     vincent: "/figma-assets/vincent-pelle-logo.png",
     linkup: "/figma-assets/linkup-logo-mono.png",
+    icter: "/figma-assets/icter-logo-mono.png",
     weeranayaka: "/figma-assets/weeranayaka-gems-black-text.png",
 
     amazon: "/figma-assets/amazon.png",
@@ -17,6 +18,7 @@ export default function PartnerSection() {
   };
 
   const partners = [
+    {src: assets.icter, alt:"ICTer"},
     { src: assets.kepri, alt: "Kepri" },
     { src: assets.vincent, alt: "Vincent Pelle" },
     { src: assets.linkup, alt: "LinkUp" },
