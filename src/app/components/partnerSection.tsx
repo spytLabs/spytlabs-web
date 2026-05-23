@@ -19,7 +19,7 @@ export default function PartnerSection() {
 
   const partners = [
     {src: assets.icter, alt:"ICTer"},
-    { src: assets.kepri, alt: "Kepri" },
+    // { src: assets.kepri, alt: "Kepri" },
     { src: assets.vincent, alt: "Vincent Pelle" },
     { src: assets.linkup, alt: "LinkUp" },
     { src: assets.weeranayaka, alt: "Weeranayaka Gems" },

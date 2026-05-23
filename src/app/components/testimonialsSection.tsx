@@ -1,12 +1,12 @@
 const testimonials = [
-  {
-    name: "Jarrod B",
-    role: "Kepri Estate",
-    quote:
-      "Highly recommended, they did an impeccable job, well inside timelines I requested and to a standard much higher than I expected, including guidance on making things more efficient and effective at every step.",
-    avatar: "/figma-assets/kepri-logo-small.png",
-    nodeId: "4:268",
-  },
+  // {
+  //   name: "Jarrod B",
+  //   role: "Kepri Estate",
+  //   quote:
+  //     "Highly recommended, they did an impeccable job, well inside timelines I requested and to a standard much higher than I expected, including guidance on making things more efficient and effective at every step.",
+  //   avatar: "/figma-assets/kepri-logo-small.png",
+  //   nodeId: "4:268",
+  // },
   {
     name: "Liam J",
     role: "CEO, All Seasons SE",
