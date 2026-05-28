@@ -42,12 +42,13 @@ This project includes a Supabase-backed redirect system:
 - Public redirect route: `/r/[code]`
 - Admin dashboard: `/r/admin`
 
-### Hardcoded admin credentials
+### Admin credentials
 
-- Username: `admin`
-- Password: `spytlabs-admin-2026`
+Set these in your `.env.local` or hosting environment:
 
-Update these in `src/lib/redirectAdminAuth.ts` before production.
+- `REDIRECT_ADMIN_USERNAME`
+- `REDIRECT_ADMIN_PASSWORD`
+- `REDIRECT_ADMIN_SESSION_SECRET`
 
 ### Required environment variables
 
@@ -56,6 +57,9 @@ Add these to your `.env.local`:
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=https://wrkfpcfjqtoductvjcsa.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+REDIRECT_ADMIN_USERNAME=your_admin_username
+REDIRECT_ADMIN_PASSWORD=your_admin_password
+REDIRECT_ADMIN_SESSION_SECRET=your_long_random_session_secret
 ```
 
 ### Database migration
