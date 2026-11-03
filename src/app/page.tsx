@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import HeroSecion from "./components/heroSection";
-import MetricsSection from "./components/metricsSection";
+import BridgeSection from "./components/bridgeSection";
 import FutureSection from "./components/futureSection";
-import InnovationSection from "./components/innovationSection";
+import CaseStudiesSection from "./components/caseStudiesSection";
 import PartnerSection from "./components/partnerSection";
 import TestimonialsSection from "./components/testimonialsSection";
 import ContactFooterSection from "./components/contactFooterSection";
@@ -46,9 +46,9 @@ export default function Home() {
     >
       <HeroSecion />
       <PartnerSection />
-      <MetricsSection />
+      <BridgeSection />
       <FutureSection />
-      <InnovationSection />
+      <CaseStudiesSection />
       <TestimonialsSection />
       <ContactFooterSection />
     </main>

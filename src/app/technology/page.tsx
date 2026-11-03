@@ -1,143 +1,37 @@
 import type { Metadata } from "next";
-import ContactFooterSection from "../components/contactFooterSection";
-import PageHeroSection from "../components/pageHeroSection";
+import ServicePage, { type ServicePageProps } from "../components/servicePage";
 
-const assets = {
-  intro1: "/figma-assets/spyt-web-bg-2.webm",
-  intro2: "/figma-assets/automation-team.jpg",
-  intro3: "/figma-assets/design-hero-1.jpg",
-  platforms: "/figma-assets/path-digital-tR0jvlsmCuQ-unsplash.jpg",
-  mobile: "/figma-assets/Image_9fnajf9fnajf9fna.png",
-  infrastructure: "/figma-assets/kevin-ache-2JJ3wBHu4_0-unsplash 1.png",
-  consulting: "/figma-assets/charlesdeluvio-Lks7vei-eAg-unsplash 1.png",
+const content: ServicePageProps = {
+  showSites: true,
+  title: "Technology.",
+  eyebrow: "Web, apps & systems",
+  subtitle: "Fast, reliable websites and software, engineered to scale with your business from day one.",
+  intro: {
+    lead: "Turning vision into code,",
+    accent: "and code into growth.",
+    body: "We bridge complex technical requirements and intuitive experiences. Not just features, but systems built to handle growth.",
+  },
+  media: { kind: "browser", video: "/case-studies/spillburg/scroll.mp4", poster: "/case-studies/spillburg/scroll.jpg", url: "spillburg.com", label: "Spillburg Corporate Services website, scrolling" },
+  capabilities: [
+    { title: "Web platforms & applications", body: "Custom, responsive web builds on modern frameworks, with speed, SEO and a seamless experience on every device." },
+    { title: "Mobile solutions", body: "User-centric iOS and Android apps focused on performance and a native feel, so your brand stays with users on the go." },
+    { title: "Systems & infrastructure", body: "Secure backend architecture, APIs, databases and cloud hosting, so your operations stay online around the clock." },
+    { title: "Technical consulting", body: "Practical advice on tech stacks, security and digital strategy to help you make informed decisions." },
+  ],
+  proof: {
+    client: "Spillburg Corporate Services",
+    headline: "A corporate site that earns investor trust at first glance.",
+    stats: [
+      { value: "15", label: "Pages, including 8 dedicated service pages" },
+      { value: "100", label: "Lighthouse best practices score" },
+      { value: "96", label: "Lighthouse accessibility score" },
+    ],
+  },
+  portfolio: { label: "Website portfolio", href: "https://www.spytlabs.com/r/website-portfolio" },
 };
 
 export default function TechnologyPage() {
-  return (
-    <main className="mt-2 mx-2 mb-10 bg-white box-border ">
-      <PageHeroSection title="Technology." />
-
-      <div className="mx-auto w-full max-w-352.5 px-5 sm:px-11">
-        <section className="py-16 text-center sm:py-20 md:pb-16 pb-8">
-          <p className="mx-auto text-[clamp(13px,1vw,18px)] font-medium uppercase tracking-[0.32em] text-[#2d0da0]">
-            Engineering for the Modern Web
-          </p>
-          <h2 className="mx-auto mt-4 max-w-4xl text-[clamp(40px,5.5vw,65px)] leading-[1.05] font-semibold tracking-[-0.04em] text-black">
-            Turning vision into code,
-            <span className="block text-[#2d0da0]">and code into growth.</span>
-          </h2>
-          <p className="mx-auto mt-6 max-w-4xl text-[clamp(14px,1.45vw,28px)] leading-[1.45] font-normal text-[#45454a]">
-            At spytLabs, we build the digital foundations that allow businesses
-            to scale. We specialize in clean, high-performance software
-            engineering, focusing on creating tools that are as functional as
-            they are reliable.
-          </p>
-          <p className="mx-auto mt-4 max-w-4xl text-[clamp(14px,1.35vw,24px)] leading-[1.55] font-normal text-[#45454a]">
-            Our team bridges the gap between complex technical requirements and
-            intuitive user experiences. We do not just build features; we build
-            scalable systems designed to handle growth from day one.
-          </p>
-        </section>
-
-  
-        <section className="flex flex-col gap-10 py-12 md:min-h-140 md:flex-row md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-              What We Build
-            </p>
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Web Platforms &amp; Applications
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              Custom-built, responsive web solutions using modern frameworks.
-              We prioritize speed, SEO, and a seamless experience across all
-              devices so your products feel fast and dependable from the first
-              interaction.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.platforms}
-              alt="Web platforms and applications"
-              className="h-80 w-full object-cover md:h-140"
-            />
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-10 py-12 md:min-h-140 md:flex-row-reverse md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-              What We Build
-            </p>
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Mobile Solutions
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              User-centric iOS and Android applications focused on performance
-              and native feel, ensuring your brand stays connected with users
-              on the go.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.mobile}
-              alt="Mobile solutions"
-              className="h-80 w-full object-cover md:h-140"
-            />
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-10 py-12 md:min-h-140 md:flex-row md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-              What We Build
-            </p>
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Systems &amp; Infrastructure
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              Secure backend architecture and cloud deployment. We handle the
-              technical heavy lifting APIs, databases, and hosting, so your
-              operations stay online 24/7.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.infrastructure}
-              alt="Systems and infrastructure"
-              className="h-80 w-full object-cover md:h-140"
-            />
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-10 py-12 md:min-h-140 md:flex-row-reverse md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-              What We Build
-            </p>
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Technical Consulting
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              Practical advice on tech stacks, security, and digital strategy to
-              help you make informed decisions for your business.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.consulting}
-              alt="Technical consulting"
-              className="h-80 w-full object-cover md:h-140"
-            />
-          </div>
-        </section>
-
-        <div className="py-8 sm:py-12" />
-      </div>
-
-      <ContactFooterSection />
-    </main>
-  );
+  return <ServicePage {...content} />;
 }
 
 export const metadata: Metadata = {

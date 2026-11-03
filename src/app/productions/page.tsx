@@ -1,149 +1,46 @@
 import type { Metadata } from "next";
-import ContactFooterSection from "../components/contactFooterSection";
-import PageHeroSection from "../components/pageHeroSection";
+import ServicePage, { type ServicePageProps } from "../components/servicePage";
 
-const assets = {
-  intro1: "/figma-assets/design-hero-1.jpg",
-  intro2: "/figma-assets/automation-team.jpg",
-  intro3: "/figma-assets/design-img-4.jpg",
-  branding: "/figma-assets/design-img-1.jpg",
-  video: "/figma-assets/production.mp4",
-  photo: "/figma-assets/szabo-viktor-NI_fJ15rIfI-unsplash.jpg",
-  artDirection: "/figma-assets/design-img-6.jpg",
+const content: ServicePageProps = {
+  title: "Production.",
+  eyebrow: "Video & creative production",
+  subtitle: "Commercials, social reels and photography that stop the scroll and make people act.",
+  intro: {
+    lead: "Bringing your brand",
+    accent: "to life on screen.",
+    body: "Great products need a great story. We plan, shoot and edit content built for the feeds your customers actually watch.",
+  },
+  media: {
+    kind: "reels",
+    items: [
+      { src: "/case-studies/colombo-litfest/reel-1.mp4", poster: "/case-studies/colombo-litfest/reel-1.jpg", label: "Colombo Literary Festival opening ceremony reel" },
+      { src: "/case-studies/ninetynine/reel-2.mp4", poster: "/case-studies/ninetynine/reel-2.jpg", label: "NinetyNine food reel" },
+      { src: "/case-studies/colombo-litfest/reel-4.mp4", poster: "/case-studies/colombo-litfest/reel-4.jpg", label: "Colombo Literary Festival day 4 recap" },
+      { src: "/case-studies/ninetynine/reel-3.mp4", poster: "/case-studies/ninetynine/reel-3.jpg", label: "NinetyNine food reel" },
+    ],
+  },
+  capabilities: [
+    { title: "Commercial & video production", body: "From promotional commercials and campaign films to high-impact social content, video designed to show your value and turn viewers into clients." },
+    { title: "Social reels & event coverage", body: "Vertical-first reels, speaker clips and same-day recaps, filmed and published fast enough to ride the moment." },
+    { title: "Food & product videography", body: "High-end, appetising close-ups and product shots that make every dish and detail look as good as it is." },
+    { title: "Branding & visual identity", body: "Colour palettes, typography and brand guidelines that give your business a distinct, professional voice." },
+    { title: "Professional photoshoots", body: "Product, corporate and lifestyle photography so your website and social channels look sharp and credible." },
+  ],
+  proof: {
+    client: "Colombo Literary Festival",
+    logo: "/case-studies/colombo-litfest/logo.svg",
+    headline: "730K reel views in six festival days.",
+    stats: [
+      { value: "730K", label: "Reel views across the six festival days" },
+      { value: "497K", label: "Views on the best-performing reel" },
+      { value: "100%", label: "Organic reach, no paid boosts" },
+    ],
+  },
+  portfolio: { label: "Production portfolio", href: "https://www.spytlabs.com/r/production-portfolio" },
 };
 
 export default function ProductionsPage() {
-  return (
-    <main className="mt-2 mx-2 mb-10 bg-white box-border ">
-      <PageHeroSection title="Production." />
-
-      <div className="mx-auto w-full max-w-[1410px] px-5 sm:px-11">
-        <section className="py-16 text-center md:pb-16 sm:py-20 pb-8">
-          <p className="mx-auto text-[clamp(13px,1vw,18px)] font-medium uppercase tracking-[0.32em] text-[#2d0da0]">
-            Bringing Your Brand to Life
-          </p>
-          <h2 className="mx-auto mt-4 max-w-4xl text-[clamp(40px,5.5vw,65px)] leading-[1.05] font-semibold tracking-[-0.04em] text-black">
-            Crafting visual identities that
-            <span className="block text-[#2d0da0]">demand attention.</span>
-          </h2>
-          <p className="mx-auto mt-6 max-w-4xl text-[clamp(14px,1.45vw,28px)] leading-[1.45] font-normal text-[#45454a]">
-            At spytLabs, we know that great technology needs a great story. Our
-            creative production team specializes in building striking visual
-            narratives that connect with your audience.
-          </p>
-          <p className="mx-auto mt-4 max-w-4xl text-[clamp(14px,1.35vw,24px)] leading-[1.55] font-normal text-[#45454a]">
-            Whether you are launching a new product or rebranding an
-            established business, we provide the creative firepower to make
-            your mark in the digital space.
-          </p>
-        </section>
-
-
-
-        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-              Our Creative Services
-            </p>
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Branding &amp; Visual Identity
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              Your brand is more than just a logo. We develop comprehensive
-              visual identities, including color palettes, typography, and
-              brand guidelines that give your business a distinct and
-              professional voice in the market.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.branding}
-              alt="Branding and visual identity"
-              className="h-[420px] w-full object-cover md:h-[560px]"
-            />
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row-reverse md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-              Our Creative Services
-            </p>
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Commercial &amp; Video Production
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-            Video is the most powerful way to communicate your value. From structured promotional commercials and integrated marketing campaigns to high-impact social media content, we produce high-quality video designed to highlight your expertise and convert viewers into clients.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden bg-black">
-            <video
-              src={assets.video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-[420px] w-full object-cover md:h-[560px]"
-            />
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-              Our Creative Services
-            </p>
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Professional Photoshoots
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              High-end imagery sets the tone for your business. We handle
-              professional photography for product catalogs, corporate team
-              profiles, and lifestyle shoots to ensure your websites and social
-              channels look sharp and credible.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.photo}
-              alt="Professional photoshoot"
-              className="h-[420px] w-full object-cover md:h-[560px]"
-            />
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-10 py-12 md:min-h-[560px] md:flex-row-reverse md:items-stretch">
-          <div className="flex flex-1 flex-col justify-center space-y-4">
-            <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
-              Our Creative Services
-            </p>
-            <h3 className="text-[clamp(32px,4vw,56px)] leading-[1.15] font-semibold tracking-[-0.02em] text-black">
-              Digital Art Direction
-            </h3>
-            <p className="text-[clamp(16px,1.2vw,24px)] leading-[1.9] font-normal text-[#333339]">
-              We ensure that every visual element, from your website UI to your
-              marketing materials, tells a unified story. Our team directs the
-              creative vision so your brand remains consistent across all
-              platforms.
-            </p>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={assets.artDirection}
-              alt="Digital art direction"
-              className="h-[420px] w-full object-cover md:h-[560px]"
-            />
-          </div>
-        </section>
-
-
-
-        <div className="py-8 sm:py-12" />
-      </div>
-
-      <ContactFooterSection />
-    </main>
-  );
+  return <ServicePage {...content} />;
 }
 
 export const metadata: Metadata = {

@@ -6,6 +6,19 @@ import HoverScrollText from "./HoverScrollText";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  // Floating island nav appears once the first screen has been scrolled past
+  const [showIsland, setShowIsland] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowIsland(window.scrollY > window.innerHeight);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
@@ -62,6 +75,45 @@ export default function NavBar() {
           <HoverScrollText>Contact Us</HoverScrollText>
         </Link>
       </nav>
+
+      {/* Floating island nav, fixed to the top after the first 100vh */}
+      <div
+        className={`fixed top-3 left-1/2 z-50 w-max max-w-[calc(100vw-24px)] -translate-x-1/2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          showIsland ? "translate-y-0 scale-100 opacity-100" : "pointer-events-none -translate-y-[140%] scale-90 opacity-0"
+        }`}
+      >
+        <div className="flex items-center gap-1 rounded-full border border-white/10 bg-[#111114]/85 p-1.5 text-white shadow-[0_12px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+          <Link href="/" className="flex shrink-0 items-center px-3" aria-label="spytLabs home">
+            <img src={assets.logo} alt="spytLabs" className="h-5 w-auto select-none" draggable={false} />
+          </Link>
+          <nav aria-label="Primary" className="flex items-center max-[1060px]:hidden">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="rounded-full px-3.5 py-2 text-[14px] font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+          <Link
+            href="/contact"
+            className="ml-1 shrink-0 rounded-full bg-[#3200eb] px-4.5 py-2 text-[14px] font-medium whitespace-nowrap transition-colors hover:bg-[#2900c4]"
+          >
+            Contact Us
+          </Link>
+          <button
+            type="button"
+            className="flex size-9 flex-col items-center justify-center gap-1 rounded-full transition-colors hover:bg-white/10 min-[1061px]:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Navigation Menu"
+          >
+            <span className={`h-0.5 w-4.5 bg-white transition-all duration-300 ${isOpen ? "translate-y-0.75 rotate-45" : ""}`} />
+            <span className={`h-0.5 w-4.5 bg-white transition-all duration-300 ${isOpen ? "-translate-y-0.75 -rotate-45" : ""}`} />
+          </button>
+        </div>
+      </div>
 
       {/* Mobile Hamburger Button */}
       <button
