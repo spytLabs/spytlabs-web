@@ -14,9 +14,9 @@ const content: ServicePageProps = {
     kind: "reels",
     items: [
       { src: "/case-studies/colombo-litfest/reel-1.mp4", poster: "/case-studies/colombo-litfest/reel-1.jpg", label: "Colombo Literary Festival opening ceremony reel" },
-      { src: "/case-studies/ninetynine/reel-2.mp4", poster: "/case-studies/ninetynine/reel-2.jpg", label: "NinetyNine food reel" },
+      { src: "/case-studies/colombo-litfest/reel-2.mp4", poster: "/case-studies/colombo-litfest/reel-2.jpg", label: "Colombo Literary Festival day 3 reel" },
       { src: "/case-studies/colombo-litfest/reel-4.mp4", poster: "/case-studies/colombo-litfest/reel-4.jpg", label: "Colombo Literary Festival day 4 recap" },
-      { src: "/case-studies/ninetynine/reel-3.mp4", poster: "/case-studies/ninetynine/reel-3.jpg", label: "NinetyNine food reel" },
+      { src: "/case-studies/colombo-litfest/reel-5.mp4", poster: "/case-studies/colombo-litfest/reel-5.jpg", label: "Colombo Literary Festival highlights" },
     ],
   },
   capabilities: [
