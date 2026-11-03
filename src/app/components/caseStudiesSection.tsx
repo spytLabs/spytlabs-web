@@ -33,6 +33,8 @@ type CaseStudy = {
   // Website: a scrolling screen recording in a browser frame, plus page screenshots
   site?: { video: string; poster: string; url: string; shots: { src: string; alt: string }[] };
   theme: "light" | "dark" | "brand";
+  // Kept in code but not rendered, e.g. while waiting on client approval
+  hidden?: boolean;
 };
 
 const LITFEST = "/case-studies/colombo-litfest";
@@ -114,6 +116,8 @@ const cases: CaseStudy[] = [
   {
     type: "Production",
     client: "NinetyNine Restaurant & Lounge",
+    // Hidden until NinetyNine approves being featured
+    hidden: true,
     logo: `${NINETYNINE}/logo.png`,
     role: "Restaurant videography partner",
     headline: "Food reels you can almost taste.",
@@ -210,7 +214,7 @@ export default function CaseStudiesSection() {
 
       {/* Cards stick and stack on desktop; each one slides over the previous */}
       <div className="flex flex-col gap-6">
-        {cases.map((study, i) => {
+        {cases.filter((study) => !study.hidden).map((study, i) => {
           const theme = themes[study.theme];
 
           if (study.pipeline) {
