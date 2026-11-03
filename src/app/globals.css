@@ -27,7 +27,11 @@ html, body {
 }
 
 .partner-marquee {
-  animation: partner-marquee 40s linear infinite;
+  animation: partner-marquee 60s linear infinite;
+}
+
+.partner-marquee-reverse {
+  animation-direction: reverse;
 }
 
 .partner-marquee-wrap:hover .partner-marquee {
@@ -39,3 +43,4 @@ html, body {
     animation: none;
   }
 }
+
