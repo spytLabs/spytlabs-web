@@ -1,4 +1,6 @@
+import AutoSlider from "./AutoSlider";
 import ReelVideo from "./ReelVideo";
+import StickyCard from "./StickyCard";
 
 // Short links managed in /r/admin on the live site; absolute so they work on previews too
 const portfolios = [
@@ -220,10 +222,10 @@ export default function CaseStudiesSection() {
           if (study.pipeline) {
             const { pipeline } = study;
             return (
-              <article
+              <StickyCard
                 key={study.client}
                 className={`flex flex-col justify-between overflow-hidden rounded-lg lg:sticky lg:min-h-[calc(100vh-96px)] ${theme.card}`}
-                style={{ top: `${24 + i * 24}px` }}
+                top={24 + i * 24}
               >
                 <div className="grid gap-10 p-8 sm:p-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:p-12">
                   <div>
@@ -254,15 +256,15 @@ export default function CaseStudiesSection() {
                   </div>
                   <figcaption className="mt-4 text-[13px] text-[#77767e] sm:text-sm">{pipeline.caption}</figcaption>
                 </figure>
-              </article>
+              </StickyCard>
             );
           }
 
           return (
-            <article
+            <StickyCard
               key={study.client}
               className={`grid overflow-hidden rounded-lg lg:sticky lg:min-h-[calc(100vh-96px)] grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] ${theme.card}`}
-              style={{ top: `${24 + i * 24}px` }}
+              top={24 + i * 24}
             >
               <div className="flex flex-col justify-between gap-10 p-8 sm:p-10 lg:p-12">
                 <div>
@@ -322,9 +324,9 @@ export default function CaseStudiesSection() {
                 </div>
               ) : study.gallery ? (
                 <div className="flex min-w-0 items-center p-3 max-lg:order-first lg:pl-0">
-                  <div className={`flex w-full items-start gap-3 max-lg:-mr-3 max-lg:snap-x max-lg:snap-mandatory max-lg:overflow-x-auto max-lg:[scrollbar-width:none] lg:grid ${study.galleryCols === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
+                  <AutoSlider className={`flex w-full items-start gap-3 max-lg:-mr-3 max-lg:snap-x max-lg:snap-mandatory max-lg:overflow-x-auto max-lg:[scrollbar-width:none] lg:grid ${study.galleryCols === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
                     {study.gallery.map((item) => <GalleryTile key={item.src} item={item} showLabel={study.galleryLabels !== false} />)}
-                  </div>
+                  </AutoSlider>
                 </div>
               ) : study.media ? (
                 <div className="relative min-h-72 max-lg:order-first max-lg:aspect-[4/3] max-lg:min-h-0 lg:m-3 lg:ml-0 lg:overflow-hidden lg:rounded-md">
@@ -335,7 +337,7 @@ export default function CaseStudiesSection() {
                   )}
                 </div>
               ) : null}
-            </article>
+            </StickyCard>
           );
         })}
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AutoSlider from "./AutoSlider";
 import ContactFooterSection from "./contactFooterSection";
 import PageHeroSection from "./pageHeroSection";
 import ReelVideo from "./ReelVideo";
@@ -41,13 +42,13 @@ function ArrowIcon({ className = "size-4" }: { className?: string }) {
 function Media({ media }: { media: ServiceMedia }) {
   if (media.kind === "reels") {
     return (
-      <div className="flex gap-3 max-lg:-mx-5.5 max-lg:snap-x max-lg:snap-mandatory max-lg:overflow-x-auto max-lg:px-5.5 max-lg:[scrollbar-width:none] lg:grid lg:grid-cols-4">
+      <AutoSlider className="flex gap-3 max-lg:-mx-5.5 max-lg:snap-x max-lg:snap-mandatory max-lg:overflow-x-auto max-lg:px-5.5 max-lg:[scrollbar-width:none] lg:grid lg:grid-cols-4">
         {media.items.map((reel) => (
           <div key={reel.src} className="relative aspect-[9/16] overflow-hidden rounded-lg bg-[#111114] max-lg:w-[58vw] max-lg:max-w-64 max-lg:shrink-0 max-lg:snap-start">
             <ReelVideo src={reel.src} poster={reel.poster} label={reel.label} />
           </div>
         ))}
-      </div>
+      </AutoSlider>
     );
   }
 
