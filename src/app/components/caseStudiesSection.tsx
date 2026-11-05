@@ -118,8 +118,6 @@ const cases: CaseStudy[] = [
   {
     type: "Production",
     client: "NinetyNine Restaurant & Lounge",
-    // Hidden until NinetyNine approves being featured
-    hidden: true,
     logo: `${NINETYNINE}/logo.png`,
     role: "Restaurant videography partner",
     headline: "Food reels you can almost taste.",
