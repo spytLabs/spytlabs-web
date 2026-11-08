@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HoverScrollText from "./HoverScrollText";
+import { company } from "@/lib/company";
 
 function ArrowIcon() {
   return (
@@ -53,13 +54,19 @@ function LinkedinIcon() {
   );
 }
 
-function YoutubeIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5 fill-current">
-      <path d="M21.6 8.2a2.8 2.8 0 0 0-2-2c-1.8-.5-7.6-.5-7.6-.5s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C2 10 2 12 2 12s0 2 .4 3.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2c.4-1.8.4-3.8.4-3.8s0-2-.4-3.8ZM10 15.2V8.8L15.6 12 10 15.2Z" />
-    </svg>
-  );
-}
+const footerLinks = [
+  { label: "Home", href: "/" },
+  { label: "Design", href: "/design" },
+  { label: "Automation", href: "/automation" },
+  { label: "Production", href: "/productions" },
+  { label: "Technology", href: "/technology" },
+  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const socialClass =
+  "flex size-11 items-center justify-center rounded-full border border-black/15 text-[#111114] transition-colors duration-300 ease-out hover:border-[#3200eb] hover:bg-[#3200eb] hover:text-white";
 
 type ContactFooterSectionProps = {
   showIntroSection?: boolean;
@@ -129,34 +136,42 @@ export default function ContactFooterSection({
             </a>
           </div>
 
+          <div className="grid gap-6 border-b border-black/15 py-8 sm:grid-cols-2">
+            <div>
+              <p className="m-0 text-sm font-medium tracking-wide text-[#77767e] uppercase">Phone</p>
+              <a href={`tel:${company.phone}`} className="mt-1 inline-flex min-h-11 items-center text-[clamp(20px,1.6vw,28px)] font-medium tracking-[-0.02em] text-[#111114] transition-colors hover:text-[#2d0da0]">
+                {company.phoneDisplay}
+              </a>
+            </div>
+            <div>
+              <p className="m-0 text-sm font-medium tracking-wide text-[#77767e] uppercase">Location</p>
+              <p className="m-0 mt-1 flex min-h-11 items-center text-[clamp(20px,1.6vw,28px)] font-medium tracking-[-0.02em] text-[#111114]">{company.location}</p>
+            </div>
+          </div>
+
           <div className="border-b border-black/15 py-8">
             <p className="m-0 text-sm font-medium tracking-wide text-[#77767e] uppercase">Navigation</p>
-            <nav className="mt-3 flex flex-wrap gap-x-8 gap-y-2 text-[clamp(22px,2vw,32px)] leading-[1.2] font-medium tracking-[-0.02em] text-[#111114]">
-              <Link href="/" className="transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Home</HoverScrollText></Link>
-              {/* <Link href="/blog" className="transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Blog</HoverScrollText></Link> */}
-              <Link href="/design" className="transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Design</HoverScrollText></Link>
-              <Link href="/automation" className="transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Automation</HoverScrollText></Link>
-              <Link href="/productions" className="transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Production</HoverScrollText></Link>
-              <Link href="/technology" className="transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Technology</HoverScrollText></Link>
-              <Link href="/contact" className="transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Contact Us</HoverScrollText></Link>
+            <nav className="mt-3 flex flex-wrap gap-x-8 text-[clamp(22px,2vw,32px)] leading-[1.2] font-medium tracking-[-0.02em] text-[#111114]">
+              {footerLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="min-h-11 inline-flex items-center transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>{link.label}</HoverScrollText></Link>
+              ))}
             </nav>
           </div>
 
           <div className="border-b border-black/15 py-8">
             <p className="m-0 text-sm font-medium tracking-wide text-[#77767e] uppercase">Legal</p>
-            <div className="mt-3 flex flex-wrap gap-x-8 gap-y-2 text-[clamp(17px,1.3vw,22px)] leading-[1.2] font-medium text-[#54535c]">
-              <a href="#" className="transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Privacy Policy</HoverScrollText></a>
-              <Link href="/terms-of-service" className="transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Terms of Service</HoverScrollText></Link>
+            <div className="mt-3 flex flex-wrap gap-x-8 text-[clamp(17px,1.3vw,22px)] leading-[1.2] font-medium text-[#54535c]">
+              <Link href="/privacy-policy" className="min-h-11 inline-flex items-center transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Privacy Policy</HoverScrollText></Link>
+              <Link href="/terms-of-service" className="min-h-11 inline-flex items-center transition-colors duration-300 ease-out hover:text-[#2d0da0]"><HoverScrollText>Terms of Service</HoverScrollText></Link>
             </div>
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-4 py-7">
-            <p className="m-0 text-sm text-[#77767e]">© 2026 spytLabs. All rights reserved.</p>
+            <p className="m-0 text-sm text-[#77767e]">© 2026 {company.legalName}. All rights reserved.</p>
             <div className="flex items-center gap-2">
-              <a href="#" aria-label="Facebook" className="flex size-11 items-center justify-center rounded-full border border-black/15 text-[#111114] transition-colors duration-300 ease-out hover:border-[#3200eb] hover:bg-[#3200eb] hover:text-white" target="_blank"><FacebookIcon /></a>
-              <a href="https://www.instagram.com/spytlabs/" aria-label="Instagram" className="flex size-11 items-center justify-center rounded-full border border-black/15 text-[#111114] transition-colors duration-300 ease-out hover:border-[#3200eb] hover:bg-[#3200eb] hover:text-white" target="_blank"><InstagramIcon /></a>
-              <a href="#" aria-label="LinkedIn" className="flex size-11 items-center justify-center rounded-full border border-black/15 text-[#111114] transition-colors duration-300 ease-out hover:border-[#3200eb] hover:bg-[#3200eb] hover:text-white" target="_blank"><LinkedinIcon /></a>
-              <a href="#" aria-label="YouTube" className="flex size-11 items-center justify-center rounded-full border border-black/15 text-[#111114] transition-colors duration-300 ease-out hover:border-[#3200eb] hover:bg-[#3200eb] hover:text-white" target="_blank"><YoutubeIcon /></a>
+              <a href={company.social.facebook} aria-label="spytLabs on Facebook" className={socialClass} target="_blank" rel="noopener noreferrer"><FacebookIcon /></a>
+              <a href={company.social.instagram} aria-label="spytLabs on Instagram" className={socialClass} target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
+              <a href={company.social.linkedin} aria-label="spytLabs on LinkedIn" className={socialClass} target="_blank" rel="noopener noreferrer"><LinkedinIcon /></a>
             </div>
           </div>
         </div>

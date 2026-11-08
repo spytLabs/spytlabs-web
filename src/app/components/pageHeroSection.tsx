@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { preload } from "react-dom";
 import NavBar from "./navBar";
 
 interface PageHeroSectionProps {
@@ -9,7 +10,12 @@ interface PageHeroSectionProps {
   // Optional secondary action, e.g. a portfolio link; "Start a project" is shown whenever actions are on
   secondaryAction?: { label: string; href: string; external?: boolean };
   showActions?: boolean;
+  // Shorter hero, for pages where the content below is the point (e.g. the contact form)
+  compact?: boolean;
 }
+
+// One-word display titles run huge; descriptive headlines need a smaller scale to fit
+const LONG_TITLE_LENGTH = 18;
 
 function ArrowIcon({ className = "size-4" }: { className?: string }) {
   return (
@@ -22,17 +28,25 @@ function ArrowIcon({ className = "size-4" }: { className?: string }) {
 
 export default function PageHeroSection({
   title,
-  heroBg = "/figma-assets/spyt-bg.png",
+  heroBg = "/figma-assets/spyt-bg.webp",
   eyebrow,
   subtitle,
   secondaryAction,
   showActions = false,
+  compact = false,
 }: PageHeroSectionProps) {
+  preload(heroBg, { as: "image", fetchPriority: "high" });
+
+  const titleSize =
+    title.length > LONG_TITLE_LENGTH
+      ? "max-w-[18ch] text-[clamp(40px,6vw,104px)] leading-[1] tracking-[-0.04em]"
+      : "text-[clamp(56px,9vw,160px)] leading-[0.92] tracking-[-0.05em]";
+
   return (
     <section className="overflow-hidden rounded-lg" data-node-id="page-hero">
       <div
         className={`relative flex flex-col justify-between bg-cover bg-center px-12.5 pt-7 pb-12 text-white max-[1060px]:px-5.5 max-[1060px]:pt-5 max-[1060px]:pb-9 ${
-          subtitle || showActions ? "min-h-[72vh]" : "min-h-[46vh]"
+          (subtitle || showActions) && !compact ? "min-h-[72vh]" : "min-h-[46vh]"
         }`}
         style={{ backgroundImage: `url(${heroBg})` }}
       >
@@ -42,19 +56,16 @@ export default function PageHeroSection({
           <NavBar />
         </div>
 
-        <div className="relative z-10 mt-16">
+        <div className={`relative z-10 ${compact ? "mt-10" : "mt-16"}`}>
           {eyebrow && (
             <p className="m-0 text-[clamp(14px,1vw,18px)] font-medium tracking-wide text-gray-300 uppercase">{eyebrow}</p>
           )}
-          <h1
-            className="m-0 mt-3 text-[clamp(56px,9vw,160px)] leading-[0.92] font-semibold tracking-[-0.05em]"
-            data-node-id="page-hero-title"
-          >
+          <h1 className={`m-0 mt-3 font-semibold ${titleSize}`} data-node-id="page-hero-title">
             {title}
           </h1>
 
           {(subtitle || showActions) && (
-            <div className="mt-10 flex flex-col gap-6 border-t border-white/25 pt-7 lg:flex-row lg:items-end lg:justify-between">
+            <div className={`flex flex-col gap-6 border-t border-white/25 lg:flex-row lg:items-end lg:justify-between ${compact ? "mt-6 pt-5" : "mt-10 pt-7"}`}>
               {subtitle && <p className="m-0 max-w-150 text-[clamp(16px,1.3vw,22px)] leading-[1.45] text-white/85">{subtitle}</p>}
               {showActions && (
                 <div className="flex flex-wrap items-center gap-3">

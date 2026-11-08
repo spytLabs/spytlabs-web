@@ -32,7 +32,7 @@ const allPostsQuery = `*[_type == "post"] | order(coalesce(publishedAt, _updated
 }`;
 
 export const metadata: Metadata = {
-  title: "Blog | spytLabs",
+  title: "Blog",
   description: "Insights, updates, and stories from spytLabs.",
   robots: {
     index: false,

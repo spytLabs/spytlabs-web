@@ -57,12 +57,12 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Post Not Found | spytLabs",
+      title: "Post Not Found",
     };
   }
 
   return {
-    title: `${post.title} | spytLabs Blog`,
+    title: `${post.title} - Blog`,
     description: `Read ${post.title} on the spytLabs blog.`,
   };
 }

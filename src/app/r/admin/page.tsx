@@ -16,6 +16,8 @@ import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
+export const metadata = { title: "Redirect admin", robots: { index: false, follow: false } };
+
 type AdminPageProps = {
   searchParams: Promise<{
     error?: string;

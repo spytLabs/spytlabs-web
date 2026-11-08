@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export type ShowcaseSite = {
   name: string;
   type: string;
@@ -50,12 +52,14 @@ function ArrowIcon() {
   );
 }
 
-export default function SiteShowcase({ title = "More websites we've built." }: { title?: string }) {
+export default function SiteShowcase({ title = "More websites we've built.", only }: { title?: string; only?: string[] }) {
+  const sites = only ? showcaseSites.filter((site) => only.includes(site.name)) : showcaseSites;
+
   return (
     <section className="px-12.5 pb-22 max-[1060px]:px-5.5 max-[1060px]:pb-14">
       <p className="m-0 mb-6 text-sm font-medium tracking-wide text-[#77767e] uppercase">{title}</p>
       <div className="border-t border-black/15">
-        {showcaseSites.map((site) => (
+        {sites.map((site) => (
           <article
             key={site.name}
             className="grid gap-8 border-b border-black/15 py-10 sm:py-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12"
@@ -70,7 +74,7 @@ export default function SiteShowcase({ title = "More websites we've built." }: {
                 href={site.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex w-fit items-center gap-2 rounded-full border border-black/15 px-5 py-2.5 text-[15px] font-medium text-[#111114] transition-colors hover:border-[#3200eb] hover:bg-[#3200eb] hover:text-white"
+                className="group flex w-fit items-center gap-2 rounded-full border border-black/15 px-5 py-3 text-[15px] font-medium text-[#111114] transition-colors hover:border-[#3200eb] hover:bg-[#3200eb] hover:text-white"
               >
                 Visit site
                 <ArrowIcon />
@@ -89,18 +93,21 @@ export default function SiteShowcase({ title = "More websites we've built." }: {
                     <span className="mx-auto w-full max-w-sm truncate rounded-full bg-[#f4f4f6] px-3 py-1 text-center text-[12px] text-[#77767e]">{site.url}</span>
                     <span className="w-10 max-sm:hidden" />
                   </div>
-                  <img src={site.home} alt={`${site.name} home page`} className="block aspect-[16/10] w-full object-cover object-top" draggable={false} />
+                  <Image src={site.home} alt={`${site.name} home page`} width={1600} height={1000} sizes="(min-width: 1024px) 50vw, 100vw" className="block aspect-[16/10] w-full object-cover object-top" draggable={false} />
                 </div>
                 <div className="w-[22%] shrink-0 overflow-hidden rounded-[22px] border-[5px] border-[#111114] bg-[#111114] max-sm:hidden">
-                  <img src={site.mobile} alt={`${site.name} on mobile`} className="block aspect-[9/19] w-full rounded-[16px] object-cover object-top" draggable={false} />
+                  <Image src={site.mobile} alt={`${site.name} on mobile`} width={380} height={802} sizes="(min-width: 1024px) 15vw, 22vw" className="block aspect-[9/19] w-full rounded-[16px] object-cover object-top" draggable={false} />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 {site.screens.map((screen) => (
-                  <img
+                  <Image
                     key={screen.src}
                     src={screen.src}
                     alt={screen.alt}
+                    width={1600}
+                    height={1000}
+                    sizes="(min-width: 1024px) 33vw, 50vw"
                     className="aspect-[16/10] w-full rounded-lg border border-black/10 object-cover object-top"
                     draggable={false}
                   />

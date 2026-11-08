@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import ContactFooterSection from "../components/contactFooterSection";
 import PageHeroSection from "../components/pageHeroSection";
 
@@ -86,15 +87,15 @@ export default function TermsOfServicePage() {
       number: "01",
       title: "Introduction",
       content: [
-        "Welcome to spytLabs. These Terms and Conditions govern your use of our website and the services we provide. By accessing or using our website, you agree to be bound by these terms.",
-        "Throughout this document, spytLabs will be referred to as the Service Provider. The terms you, your, and Client refer to the user, customer, or viewer of our website and services.",
+        "Welcome to spytLabs, operated by spytLabs (PVT) LTD of Colombo, Sri Lanka. These Terms and Conditions govern your use of our website and the services we provide. By accessing or using our website, you agree to be bound by these terms.",
+        "Throughout this document, spytLabs (PVT) LTD will be referred to as the Service Provider. The terms you, your, and Client refer to the user, customer, or viewer of our website and services.",
       ],
     },
     {
       number: "02",
       title: "Services",
       content: [
-        "The Service Provider specializes in automation, digitalization, and product engineering services. The specific scope, deliverables, and timelines for any project will be outlined in a separate Statement of Work or Master Service Agreement agreed upon by both parties.",
+        "The Service Provider provides design, video and creative production, software development, and AI automation services. The specific scope, deliverables, and timelines for any project will be outlined in a separate Statement of Work or Master Service Agreement agreed upon by both parties.",
       ],
     },
     {
@@ -148,7 +149,7 @@ export default function TermsOfServicePage() {
       number: "09",
       title: "Contact Us",
       content: [
-        "If you have any questions about these Terms and Conditions, please contact us.",
+        "If you have any questions about these Terms and Conditions, please email hello@spytlabs.com or call +94 77 518 4773.",
       ],
     },
   ];
@@ -171,9 +172,9 @@ export default function TermsOfServicePage() {
             <p className="text-[clamp(14px,1vw,18px)] font-medium uppercase tracking-[0.28em] text-[#2d0da0]">
               Terms and Conditions
             </p>
-            <h3 className="mt-4 text-[clamp(34px,4.5vw,60px)] leading-[1.08] font-semibold tracking-[-0.03em] text-black">
-              Last Updated: April 28, 2026
-            </h3>
+            <h2 className="mt-4 text-[clamp(34px,4.5vw,60px)] leading-[1.08] font-semibold tracking-[-0.03em] text-black">
+              Last Updated: November 8, 2026
+            </h2>
           </div>
 
           <div className="border-b border-black/15">
@@ -198,27 +199,9 @@ export default function TermsOfServicePage() {
   );
 }
 
-export const metadata: Metadata = {
-  title: "Terms of Service | spytLabs",
-  description: "Terms and conditions for use of spytLabs services and website.",
-  alternates: { canonical: "/terms-of-service" },
-  openGraph: {
-    title: "Terms of Service | spytLabs",
-    description: "Terms and conditions for use of spytLabs services and website.",
-    url: "/terms-of-service",
-    images: [
-      {
-        url: "/figma-assets/spyt-bg.png",
-        width: 1200,
-        height: 630,
-        alt: "spytLabs",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Terms of Service | spytLabs",
-    description: "Terms and conditions for use of spytLabs services and website.",
-    images: ["/figma-assets/spyt-bg.png"],
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Terms of Service",
+  description:
+    "The terms that govern use of the spytLabs website and our design, video production, software and AI automation services in Colombo, Sri Lanka.",
+  path: "/terms-of-service",
+});
