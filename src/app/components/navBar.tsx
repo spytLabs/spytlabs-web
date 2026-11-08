@@ -41,6 +41,8 @@ export default function NavBar() {
     { name: "Automation", href: "/automation" },
     { name: "Production", href: "/productions" },
     { name: "Technology", href: "/technology" },
+    { name: "Work", href: "/work" },
+    { name: "About", href: "/about" },
     // { name: "Blog", href: "/blog" },
   ];
 
@@ -78,6 +80,7 @@ export default function NavBar() {
 
       {/* Floating island nav, fixed to the top after the first 100vh */}
       <div
+        inert={!showIsland}
         className={`fixed top-3 left-1/2 z-50 w-max max-w-[calc(100vw-24px)] -translate-x-1/2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           showIsland ? "translate-y-0 scale-100 opacity-100" : "pointer-events-none -translate-y-[140%] scale-90 opacity-0"
         }`}
@@ -99,15 +102,16 @@ export default function NavBar() {
           </nav>
           <Link
             href="/contact"
-            className="ml-1 shrink-0 rounded-full bg-[#3200eb] px-4.5 py-2 text-[14px] font-medium whitespace-nowrap transition-colors hover:bg-[#2900c4]"
+            className="ml-1 flex min-h-11 shrink-0 items-center rounded-full bg-[#3200eb] px-4.5 text-[14px] font-medium whitespace-nowrap transition-colors hover:bg-[#2900c4]"
           >
             Contact Us
           </Link>
           <button
             type="button"
-            className="flex size-9 flex-col items-center justify-center gap-1 rounded-full transition-colors hover:bg-white/10 min-[1061px]:hidden"
+            className="flex size-11 flex-col items-center justify-center gap-1 rounded-full transition-colors hover:bg-white/10 min-[1061px]:hidden"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Navigation Menu"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
           >
             <span className={`h-0.5 w-4.5 bg-white transition-all duration-300 ${isOpen ? "translate-y-0.75 rotate-45" : ""}`} />
             <span className={`h-0.5 w-4.5 bg-white transition-all duration-300 ${isOpen ? "-translate-y-0.75 -rotate-45" : ""}`} />
@@ -117,9 +121,10 @@ export default function NavBar() {
 
       {/* Mobile Hamburger Button */}
       <button
-        className="group relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 min-[1061px]:hidden cursor-pointer pointer-events-auto"
+        className="group relative z-50 flex size-11 flex-col items-center justify-center gap-1.5 min-[1061px]:hidden cursor-pointer pointer-events-auto"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle Navigation Menu"
+        aria-label="Toggle navigation menu"
+        aria-expanded={isOpen}
       >
         <span
           className={`h-0.5 w-8 bg-white transition-all duration-300 ease-in-out ${

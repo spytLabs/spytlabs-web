@@ -77,7 +77,7 @@ export default function TestimonialVideo({ src, poster, label }: { src: string; 
       <button
         type="button"
         onClick={toggleMute}
-        className={`absolute top-4 right-4 flex items-center gap-2 rounded-full py-2 pr-4 pl-3 text-[13px] font-medium shadow-lg transition-colors ${
+        className={`absolute top-4 right-4 flex min-h-11 items-center gap-2 rounded-full py-2 pr-4 pl-3 text-[13px] font-medium shadow-lg transition-colors ${
           isMuted ? "bg-white text-[#111114] hover:bg-[#3200eb] hover:text-white" : "bg-black/50 text-white backdrop-blur-md hover:bg-black/70"
         }`}
         aria-label={isMuted ? "Unmute video" : "Mute video"}

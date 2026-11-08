@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { getSiteUrl } from "@/lib/siteUrl";
+import JsonLd from "./components/JsonLd";
+import { company } from "@/lib/company";
+import { organizationGraph } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | spytLabs",
   },
   description:
-    "spytLabs provides AI automation, design, productions, and technical services for ambitious teams.",
+    company.description,
   keywords: [
     "spytLabs",
     "AI automation",
@@ -32,20 +34,17 @@ export const metadata: Metadata = {
     "Sri Lanka",
     "Sri Lankan"
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_LK",
     url: "/",
     siteName: "spytLabs",
     title: "spytLabs",
     description:
-      "spytLabs provides AI automation, design, productions, and technical services for ambitious teams.",
+      company.description,
     images: [
       {
-        url: "/figma-assets/spyt-bg.png",
+        url: "/og/default.jpg",
         width: 1200,
         height: 630,
         alt: "spytLabs",
@@ -56,8 +55,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "spytLabs",
     description:
-      "spytLabs provides AI automation, design, productions, and technical services for ambitious teams.",
-    images: ["/figma-assets/spyt-bg.png"],
+      company.description,
+    images: ["/og/default.jpg"],
   },
   icons: {
     icon: [
@@ -96,6 +95,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="m-0 flex min-h-full flex-col text-[#111216] font-(--font-geist-sans)">
+        <JsonLd data={organizationGraph()} />
         {children}
       </body>
     </html>

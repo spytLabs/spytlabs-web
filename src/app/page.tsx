@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "./components/JsonLd";
+import { pageMetadata, webPageGraph } from "@/lib/seo";
 import HeroSecion from "./components/heroSection";
 import BridgeSection from "./components/bridgeSection";
 import FutureSection from "./components/futureSection";
@@ -7,36 +9,15 @@ import PartnerSection from "./components/partnerSection";
 import TestimonialsSection from "./components/testimonialsSection";
 import ContactFooterSection from "./components/contactFooterSection";
 
-export const metadata: Metadata = {
-  title: "spytLabs - AI Automation, Design, Productions & Technical Services",
+const HOME_TITLE = "spytLabs | Design, Video Production & AI Automation in Colombo";
+
+export const metadata: Metadata = pageMetadata({
+  title: HOME_TITLE,
+  absoluteTitle: true,
   description:
-    "spytLabs helps teams with AI automation, design, productions for commercials and social media, and technical delivery.",
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "spytLabs - AI Automation, Design, Productions & Technical Services",
-    description:
-      "spytLabs helps teams with AI automation, design, productions for commercials and social media, and technical delivery.",
-    url: "/",
-    type: "website",
-    images: [
-      {
-        url: "/figma-assets/spyt-bg.png",
-        width: 1200,
-        height: 630,
-        alt: "spytLabs homepage",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "spytLabs - AI Automation, Design, Productions & Technical Services",
-    description:
-      "spytLabs helps teams with AI automation, design, productions for commercials and social media, and technical delivery.",
-    images: ["/figma-assets/spyt-bg.png"],
-  },
-};
+    "spytLabs is a Colombo, Sri Lanka studio for web design, video production, software development and AI automation. One team, from idea to launch.",
+  path: "/",
+});
 
 export default function Home() {
   return (
@@ -44,6 +25,7 @@ export default function Home() {
       className="mt-2 mx-2 mb-10 bg-white box-border "
       data-node-id="7:402"
     >
+      <JsonLd data={webPageGraph({ type: "WebPage", name: HOME_TITLE, path: "/" })} />
       <HeroSecion />
       <PartnerSection />
       <BridgeSection />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import TestimonialVideo from "./TestimonialVideo";
 
 type Testimonial = {
@@ -21,14 +22,14 @@ const testimonials: Testimonial[] = [
     name: "Liam J",
     role: "CEO, All Seasons SE",
     quote:
-      "They are a pleasure to work with and is extremely good at what they does! I have worked on two projects with them so far and plan to continue working with them. I would highly recommend them.",
+      "They are a pleasure to work with and are extremely good at what they do! I have worked on two projects with them so far and plan to continue working with them. I would highly recommend them.",
     nodeId: "4:315",
   },
   {
     name: "Ole Henrik",
     role: "Founder, OMC",
     quote:
-      "spytLabs is an excellent team to work with. They helped us create high-quality digital conetents for our socials and played a key role in improving our presence on YouTube. We truly enjoyed working with them and look forward to collaborating again in the future.",
+      "spytLabs is an excellent team to work with. They helped us create high-quality digital content for our socials and played a key role in improving our presence on YouTube. We truly enjoyed working with them and look forward to collaborating again in the future.",
     avatar: "/figma-assets/ole.jpeg",
     nodeId: "4:316",
   }
@@ -95,7 +96,7 @@ export default function TestimonialsSection() {
 
             <figcaption className={`flex items-center gap-4 border-t pt-6 ${i % 2 === 0 ? "border-black/15" : "border-white/20"}`}>
               {item.avatar ? (
-                <img src={item.avatar} alt={item.name} className="size-14 rounded-full object-cover" draggable={false} />
+                <Image src={item.avatar} alt={item.name} width={56} height={56} className="size-14 rounded-full object-cover" draggable={false} />
               ) : (
                 <span
                   aria-hidden="true"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { preload } from "react-dom";
 import NavBar from "./navBar";
 import HeroWorkReel from "./HeroWorkReel";
 
@@ -20,9 +21,12 @@ function ArrowIcon({ className = "size-4" }: { className?: string }) {
 
 export default function HeroSecion() {
   const assets = {
-    heroBg: "/figma-assets/spyt-bg.png",
+    heroBg: "/figma-assets/spyt-bg.webp",
     heroBgVideo: "https://res.cloudinary.com/dh2ej5ziz/video/upload/v1778158571/spyt-web-bg-2_arasuj.webm",
   };
+
+  // A video poster can't take fetchpriority itself, so the image is preloaded separately
+  preload(assets.heroBg, { as: "image", fetchPriority: "high" });
 
   return (
     <section className="relative overflow-hidden rounded-lg min-h-[100vh] flex flex-col justify-end pointer-events-auto" data-node-id="2:93">
@@ -34,7 +38,7 @@ export default function HeroSecion() {
         playsInline={true}
         poster={assets.heroBg}
       >
-        <source src={assets.heroBgVideo} type="video/mp4" />
+        <source src={assets.heroBgVideo} type="video/webm" />
       </video>
       <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/20 to-black/85 pointer-events-none" />
 
@@ -54,6 +58,16 @@ export default function HeroSecion() {
           <span>Design. Production. Tech.</span>
           <span className="text-[#d6d0ff]">One stop.</span>
         </h1>
+
+        <Link
+          href="/contact"
+          className="group mt-5 flex min-h-12 w-fit items-center gap-3 rounded-full bg-white py-1.5 pr-1.5 pl-5 text-[16px] font-medium text-[#111114] sm:hidden"
+        >
+          Start a project
+          <span className="flex size-9 items-center justify-center rounded-full bg-[#3200eb] text-white">
+            <ArrowIcon className="size-3.5" />
+          </span>
+        </Link>
 
         <div className="mt-[clamp(32px,6vh,64px)] grid gap-3 lg:h-[clamp(240px,32vh,300px)] lg:grid-cols-2">
           <HeroWorkReel />
@@ -81,7 +95,7 @@ export default function HeroSecion() {
                 <Link
                   key={need.label}
                   href={need.href}
-                  className="flex items-center gap-1.5 rounded-full border border-black/15 bg-white px-4 py-2 text-[15px] font-medium transition-colors hover:border-[#3200eb] hover:bg-[#3200eb] hover:text-white"
+                  className="flex min-h-11 items-center gap-1.5 rounded-full border border-black/15 bg-white px-4 text-[15px] font-medium transition-colors hover:border-[#3200eb] hover:bg-[#3200eb] hover:text-white"
                 >
                   {need.label}
                   <ArrowIcon className="size-3.5" />

@@ -1,0 +1,27 @@
+# spytLabs
+
+> spytLabs (spytLabs (PVT) LTD) is a studio in Colombo, Sri Lanka offering design, video production, software development and AI automation, delivered by one team.
+
+Contact: hello@spytlabs.com, +94 77 518 4773. Projects are quoted individually.
+
+## Services
+
+- [Web design and branding](https://www.spytlabs.com/design): UI/UX, motion and brand identity.
+- [AI automation](https://www.spytlabs.com/automation): AI agents and workflows built on n8n, Make and custom APIs.
+- [Video production](https://www.spytlabs.com/productions): commercials, social reels, event coverage, food and product videography, photoshoots.
+- [Software development](https://www.spytlabs.com/technology): web platforms, mobile apps, systems and technical consulting.
+
+## Work
+
+- [Case studies](https://www.spytlabs.com/work): all published projects.
+- [Colombo Literary Festival](https://www.spytlabs.com/work/colombo-literary-festival): 730,000 organic reel views across six festival days.
+- [Spillburg Corporate Services](https://www.spytlabs.com/work/spillburg): a 15-page corporate website.
+- [Sales outreach agent](https://www.spytlabs.com/work/sales-outreach-agent): an AI agent that replaced manual prospecting for a B2B services firm.
+- [NinetyNine Restaurant & Lounge](https://www.spytlabs.com/work/ninetynine): food and drink videography.
+
+## Company
+
+- [About](https://www.spytlabs.com/about): the founding team.
+- [Contact](https://www.spytlabs.com/contact)
+- [Privacy Policy](https://www.spytlabs.com/privacy-policy)
+- [Terms of Service](https://www.spytlabs.com/terms-of-service)

@@ -1,6 +1,10 @@
+import Image from "next/image";
+import Link from "next/link";
 import AutoSlider from "./AutoSlider";
+import GalleryTile from "./GalleryTile";
 import ReelVideo from "./ReelVideo";
 import StickyCard from "./StickyCard";
+import { caseStudies } from "@/lib/caseStudies";
 
 // Short links managed in /r/admin on the live site; absolute so they work on previews too
 const portfolios = [
@@ -10,179 +14,11 @@ const portfolios = [
   { label: "Automation portfolio", href: "https://www.spytlabs.com/r/automation-portfolio" },
 ];
 
-// Portrait tiles: vertical reels (play while on screen) and behind-the-scenes photos
-type GalleryItem =
-  | { kind: "reel"; src: string; poster: string; caption: string; views?: string }
-  | { kind: "photo"; src: string; caption: string; aspect?: "portrait" };
-
-type CaseStudy = {
-  type: string;
-  client: string;
-  logo?: string;
-  role?: string;
-  headline: string;
-  brief: string;
-  services: string[];
-  results: { value: string; label: string }[];
-  // One of: a hero visual, a gallery of portrait reels/photos, or a before/after panel
-  media?: { kind: "image" | "video"; src: string; alt: string };
-  gallery?: GalleryItem[];
-  galleryCols?: 3 | 4;
-  // Hide caption overlays when the reels/photos already carry their own titles
-  galleryLabels?: boolean;
-  // Wide layout: before → after numbers on top, a real workflow screenshot full-width below
-  pipeline?: { src: string; alt: string; caption: string; shifts: { label: string; before: string; after: string }[] };
-  // Website: a scrolling screen recording in a browser frame, plus page screenshots
-  site?: { video: string; poster: string; url: string; shots: { src: string; alt: string }[] };
-  theme: "light" | "dark" | "brand";
-  // Kept in code but not rendered, e.g. while waiting on client approval
-  hidden?: boolean;
-};
-
-const LITFEST = "/case-studies/colombo-litfest";
-const SPILLBURG = "/case-studies/spillburg";
-const NINETYNINE = "/case-studies/ninetynine";
-
-const cases: CaseStudy[] = [
-  {
-    type: "Website",
-    client: "Spillburg Corporate Services",
-    role: "Corporate website · Colombo, Sri Lanka",
-    headline: "A corporate site that earns investor trust at first glance.",
-    brief:
-      "Spillburg helps investors set up in Sri Lanka. We designed and built their site from scratch, from eight service pages to a news hub tracking the CSE, Central Bank and Treasury.",
-    services: ["UI/UX design", "Web development", "SEO"],
-    results: [
-      { value: "15", label: "Pages, including 8 dedicated service pages" },
-      { value: "100", label: "Lighthouse best practices score" },
-      { value: "96", label: "Lighthouse accessibility score" },
-    ],
-    site: {
-      video: `${SPILLBURG}/scroll.mp4`,
-      poster: `${SPILLBURG}/scroll.jpg`,
-      url: "spillburg.com",
-      shots: [
-        { src: `${SPILLBURG}/services.jpg`, alt: "Spillburg services page" },
-        { src: `${SPILLBURG}/mergers-and-acquisitions.jpg`, alt: "Spillburg Mergers & Acquisitions service page" },
-        { src: `${SPILLBURG}/contact.jpg`, alt: "Spillburg contact page" },
-      ],
-    },
-    theme: "light",
-  },
-  {
-    type: "Production",
-    client: "Colombo Literary Festival",
-    logo: `${LITFEST}/logo.svg`,
-    role: "Official videography partner · ColLit 2026",
-    headline: "730K reel views in six festival days.",
-    brief:
-      "We helped the festival build @colombo_litfest on Instagram from scratch, then filmed and published ColLit in near real time with speaker clips and daily recaps. Most of the views came in the six days of the event, all organic with no paid boosts.",
-    services: ["Videography", "Editing", "Instagram strategy", "Account management"],
-    results: [
-      { value: "730K", label: "Reel views across the six festival days" },
-      { value: "100%", label: "Organic reach, no paid boosts" },
-      { value: "497K", label: "Views on the best-performing reel" },
-    ],
-    gallery: [
-      { kind: "reel", src: `${LITFEST}/reel-1.mp4`, poster: `${LITFEST}/reel-1.jpg`, caption: "Opening ceremony" },
-      { kind: "photo", src: `${LITFEST}/photo-1.jpg`, caption: "Behind the scenes" },
-      { kind: "reel", src: `${LITFEST}/reel-2.mp4`, poster: `${LITFEST}/reel-2.jpg`, caption: "Day 3" },
-      { kind: "reel", src: `${LITFEST}/reel-3.mp4`, poster: `${LITFEST}/reel-3.jpg`, caption: "Day 3" },
-      { kind: "photo", src: `${LITFEST}/photo-2.jpg`, caption: "Behind the scenes" },
-      { kind: "reel", src: `${LITFEST}/reel-4.mp4`, poster: `${LITFEST}/reel-4.jpg`, caption: "Day 4 recap" },
-      { kind: "photo", src: `${LITFEST}/photo-3.jpg`, caption: "Behind the scenes" },
-      { kind: "reel", src: `${LITFEST}/reel-5.mp4`, poster: `${LITFEST}/reel-5.jpg`, caption: "Festival highlights" },
-    ],
-    theme: "dark",
-  },
-  {
-    type: "Tech solution",
-    client: "B2B services firm",
-    role: "Sales Outreach Agent · AI automation",
-    headline: "Five people's prospecting, now one autonomous agent.",
-    brief: "An agent that finds, verifies, emails and follows up with leads on its own. Reps only step in once a prospect replies.",
-    services: [],
-    results: [],
-    pipeline: {
-      src: "/case-studies/sales-outreach-agent/workflow.png",
-      alt: "The live Sales Outreach Agent workflow",
-      caption: "The live workflow. 40+ connected steps, from lead sources to sending and follow-ups.",
-      shifts: [
-        { label: "Qualified leads a week", before: "150", after: "2,500+" },
-        { label: "Hours prospecting a week", before: "32", after: "<2" },
-        { label: "Meetings booked a month", before: "12", after: "40" },
-      ],
-    },
-    theme: "brand",
-  },
-  {
-    type: "Production",
-    client: "NinetyNine Restaurant & Lounge",
-    logo: `${NINETYNINE}/logo.png`,
-    role: "Restaurant videography partner",
-    headline: "Food reels you can almost taste.",
-    brief:
-      "We're the videography team behind NinetyNine, shooting high-end food and drink reels that make every dish look as good as it tastes.",
-    services: ["Food & drink videography", "Editing", "Social content"],
-    results: [],
-    galleryCols: 3,
-    galleryLabels: false,
-    gallery: [
-      { kind: "reel", src: `${NINETYNINE}/reel-1.mp4`, poster: `${NINETYNINE}/reel-1.jpg`, caption: "Rooted in simplicity" },
-      { kind: "reel", src: `${NINETYNINE}/reel-2.mp4`, poster: `${NINETYNINE}/reel-2.jpg`, caption: "Crisped to perfection" },
-      { kind: "reel", src: `${NINETYNINE}/reel-3.mp4`, poster: `${NINETYNINE}/reel-3.jpg`, caption: "The sizzle" },
-      { kind: "photo", src: `${NINETYNINE}/photo-1.jpg`, caption: "Jaffna prawn curry", aspect: "portrait" },
-      { kind: "photo", src: `${NINETYNINE}/photo-2.jpg`, caption: "Pavilion signature pizza", aspect: "portrait" },
-      { kind: "photo", src: `${NINETYNINE}/photo-3.jpg`, caption: "Tropical refreshment", aspect: "portrait" },
-    ],
-    theme: "dark",
-  },
-];
-
 const themes = {
   light: { card: "bg-[#f4f4f6] text-[#111114]", muted: "text-[#54535c]", rule: "border-black/15" },
   dark: { card: "bg-[#111114] text-white", muted: "text-white/65", rule: "border-white/20" },
   brand: { card: "bg-[#3200eb] text-white", muted: "text-white/75", rule: "border-white/25" },
 };
-
-function PlayIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="size-3.5 fill-current">
-      <path d="M8 5.5v13l10.5-6.5L8 5.5Z" />
-    </svg>
-  );
-}
-
-function GalleryTile({ item, showLabel = true }: { item: GalleryItem; showLabel?: boolean }) {
-  return (
-    <div
-      className={`relative overflow-hidden rounded-md bg-white/[0.06] max-lg:w-[44vw] max-lg:max-w-52 max-lg:shrink-0 max-lg:snap-start ${
-        item.kind === "photo" && item.aspect === "portrait" ? "aspect-[4/5]" : "aspect-[9/16]"
-      }`}
-    >
-      {item.kind === "reel" ? (
-        <ReelVideo src={item.src} poster={item.poster} label={item.caption} />
-      ) : (
-        <img className="absolute inset-0 h-full w-full object-cover" src={item.src} alt={item.caption} draggable={false} />
-      )}
-      {showLabel && (
-      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 to-transparent p-3 pt-10 text-white">
-        {item.kind === "reel" ? (
-          <>
-            <p className="m-0 flex items-center gap-1.5 text-[12px] font-semibold tracking-wide uppercase">
-              <PlayIcon />
-              {item.views ? `${item.views} views` : "Reel"}
-            </p>
-            <p className="m-0 mt-0.5 text-[13px] leading-snug text-white/75">{item.caption}</p>
-          </>
-        ) : (
-          <p className="m-0 text-[13px] leading-snug font-medium text-white/90">{item.caption}</p>
-        )}
-      </div>
-      )}
-    </div>
-  );
-}
 
 function ArrowIcon() {
   return (
@@ -214,7 +50,7 @@ export default function CaseStudiesSection() {
 
       {/* Cards stick and stack on desktop; each one slides over the previous */}
       <div className="flex flex-col gap-6">
-        {cases.filter((study) => !study.hidden).map((study, i) => {
+        {caseStudies.filter((study) => !study.hidden).map((study, i) => {
           const theme = themes[study.theme];
 
           if (study.pipeline) {
@@ -233,6 +69,10 @@ export default function CaseStudiesSection() {
                       {study.headline}
                     </h3>
                     <p className={`m-0 mt-5 max-w-110 text-[clamp(15px,1.1vw,19px)] leading-[1.45] ${theme.muted}`}>{study.brief}</p>
+                    <Link href={`/work/${study.slug}`} className="mt-3 flex min-h-11 w-fit items-center gap-2 text-[15px] font-medium underline-offset-4 hover:underline">
+                      Read the case study
+                      <ArrowIcon />
+                    </Link>
                   </div>
 
                   <div className="flex flex-col justify-end">
@@ -250,7 +90,7 @@ export default function CaseStudiesSection() {
 
                 <figure className="m-3 mt-0 rounded-md bg-[#f6f7fb] p-5 sm:p-8">
                   <div className="overflow-x-auto [scrollbar-width:none]">
-                    <img src={pipeline.src} alt={pipeline.alt} className="block h-auto w-full min-w-200" draggable={false} />
+                    <Image src={pipeline.src} alt={pipeline.alt} width={1685} height={225} sizes="(min-width: 800px) 100vw, 800px" className="block h-auto w-full min-w-200" draggable={false} />
                   </div>
                   <figcaption className="mt-4 text-[13px] text-[#77767e] sm:text-sm">{pipeline.caption}</figcaption>
                 </figure>
@@ -267,7 +107,7 @@ export default function CaseStudiesSection() {
               <div className="flex flex-col justify-between gap-10 p-8 sm:p-10 lg:p-12">
                 <div>
                   {study.logo ? (
-                    <img src={study.logo} alt={study.client} className="h-16 w-auto sm:h-20" draggable={false} />
+                    <img src={study.logo} alt={study.client} loading="lazy" className="h-16 w-auto sm:h-20" draggable={false} />
                   ) : (
                     <p className="m-0 text-[clamp(18px,1.4vw,24px)] font-medium">{study.client}</p>
                   )}
@@ -276,6 +116,10 @@ export default function CaseStudiesSection() {
                     {study.headline}
                   </h3>
                   <p className={`m-0 mt-5 max-w-120 text-[clamp(15px,1.1vw,19px)] leading-[1.45] ${theme.muted}`}>{study.brief}</p>
+                    <Link href={`/work/${study.slug}`} className="mt-3 flex min-h-11 w-fit items-center gap-2 text-[15px] font-medium underline-offset-4 hover:underline">
+                      Read the case study
+                      <ArrowIcon />
+                    </Link>
                   <p className={`m-0 mt-5 text-[clamp(14px,1vw,17px)] font-medium ${theme.muted}`}>
                     {study.services.join("  ·  ")}
                   </p>
@@ -310,10 +154,13 @@ export default function CaseStudiesSection() {
                   </div>
                   <div className="grid grid-cols-3 gap-3">
                     {study.site.shots.map((shot) => (
-                      <img
+                      <Image
                         key={shot.src}
                         src={shot.src}
                         alt={shot.alt}
+                        width={1600}
+                        height={1000}
+                        sizes="(min-width: 1024px) 18vw, 33vw"
                         className="aspect-[16/10] w-full rounded-md border border-black/10 object-cover object-top"
                         draggable={false}
                       />

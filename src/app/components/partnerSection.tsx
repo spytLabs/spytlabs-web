@@ -3,20 +3,20 @@ export default function PartnerSection() {
     heroBg: "/figma-assets/hero-bg.jpg",
     logo: "/figma-assets/logo.png",
     // google: "/figma-assets/google.png",
-    kepri: "/figma-assets/kepri-logo-black.png",
-    vincent: "/figma-assets/vincent-pelle-logo.png",
-    akina: "/figma-assets/akina-logo-black.png",
-    knights: "/figma-assets/knight-logo-black.png",
-    lightfest: "/figma-assets/litfest-logo-black.png",
-    jetex: "/figma-assets/jetex-logo-black.png",
-    linkup: "/figma-assets/linkup-logo-mono.png",
-    icter: "/figma-assets/icter-logo-mono.png",
-    weeranayaka: "/figma-assets/weeranayaka-gems-black-text.png",
-    ninetynine: "/figma-assets/99-logo-black.png",
-    adr: "/figma-assets/adr-logo-black.png",
-    ceylonPost: "/figma-assets/ceylon-post-black.png",
-    oneNews: "/figma-assets/onenews-logo-black.png",
-    mishee: "/figma-assets/mishee-logo-black.png",
+    kepri: "/figma-assets/kepri-logo-black.webp",
+    vincent: "/figma-assets/vincent-pelle-logo.webp",
+    akina: "/figma-assets/akina-logo-black.webp",
+    knights: "/figma-assets/knight-logo-black.webp",
+    lightfest: "/figma-assets/litfest-logo-black.webp",
+    jetex: "/figma-assets/jetex-logo-black.webp",
+    linkup: "/figma-assets/linkup-logo-mono.webp",
+    icter: "/figma-assets/icter-logo-mono.webp",
+    weeranayaka: "/figma-assets/weeranayaka-gems-black-text.webp",
+    ninetynine: "/figma-assets/99-logo-black.webp",
+    adr: "/figma-assets/adr-logo-black.webp",
+    ceylonPost: "/figma-assets/ceylon-post-black.webp",
+    oneNews: "/figma-assets/onenews-logo-black.webp",
+    mishee: "/figma-assets/mishee-logo-black.webp",
 
 
 
@@ -29,21 +29,21 @@ export default function PartnerSection() {
   };
 
   // `tall` gives square/portrait logos more height so they match the wide ones visually
-  const partners: { src: string; alt: string; tall?: boolean }[] = [
-    { src: assets.icter, alt: "ICTer" },
-    { src: assets.kepri, alt: "Kepri" },
-    { src: assets.akina, alt: "Akina", tall: true },
-    { src: assets.knights, alt: "Knights" },
-    { src: assets.lightfest, alt: "Lightfest" },
-    { src: assets.jetex, alt: "Jetex", tall: true },
-    { src: assets.vincent, alt: "Vincent Pelle" },
-    { src: assets.linkup, alt: "LinkUp" },
-    { src: assets.weeranayaka, alt: "Weeranayaka Gems" },
-    { src: assets.ninetynine, alt: "NinetyNine" },
-    { src: assets.adr, alt: "ADR" },
-    { src: assets.ceylonPost, alt: "Ceylon Post" },
-    { src: assets.oneNews, alt: "One News" },
-    { src: assets.mishee, alt: "Mishee" },
+  const partners: { src: string; width: number; height: number; alt: string; tall?: boolean }[] = [
+    { src: assets.icter, width: 229, height: 170, alt: "ICTer" },
+    { src: assets.kepri, width: 300, height: 95, alt: "Kepri" },
+    { src: assets.akina, width: 90, height: 170, alt: "Akina", tall: true },
+    { src: assets.knights, width: 300, height: 117, alt: "Knights" },
+    { src: assets.lightfest, width: 215, height: 92, alt: "Colombo Literary Festival" },
+    { src: assets.jetex, width: 152, height: 170, alt: "Jetex", tall: true },
+    { src: assets.vincent, width: 300, height: 140, alt: "Vincent Pelle" },
+    { src: assets.linkup, width: 300, height: 162, alt: "LinkUp" },
+    { src: assets.weeranayaka, width: 300, height: 83, alt: "Weeranayaka Gems" },
+    { src: assets.ninetynine, width: 300, height: 169, alt: "NinetyNine" },
+    { src: assets.adr, width: 113, height: 82, alt: "ADR" },
+    { src: assets.ceylonPost, width: 300, height: 77, alt: "Ceylon Post" },
+    { src: assets.oneNews, width: 300, height: 140, alt: "One News" },
+    { src: assets.mishee, width: 300, height: 50, alt: "Mishee" },
 
 
     // { src: assets.oracle, alt: "Oracle" },
@@ -69,7 +69,7 @@ export default function PartnerSection() {
           </h2>
         </div>
         <p className="m-0 max-w-105 text-[clamp(15px,1.05vw,19px)] leading-[1.45] text-[#54535c]">
-          From national news and literary festivals to hospitality, retail and entertainment. {partners.length} brands that trust spytLabs as their one stop for design, video and tech.
+          spytLabs is a design, video production, software and AI automation studio in Colombo, Sri Lanka. From national news and literary festivals to hospitality, retail and entertainment, {partners.length} brands trust us as their one stop.
         </p>
       </div>
 
@@ -87,8 +87,12 @@ export default function PartnerSection() {
                   >
                     <img
                       src={partner.src}
+                      width={partner.width}
+                      height={partner.height}
+                      loading="lazy"
+                      decoding="async"
                       alt={copy === 0 && rowIndex === 0 ? partner.alt : ""}
-                      className={`${partner.tall ? "max-h-20 max-[640px]:max-h-14" : "max-h-14 max-[640px]:max-h-10"} max-w-[62%] object-contain opacity-55 grayscale transition-opacity duration-300 select-none group-hover:opacity-100`}
+                      className={`${partner.tall ? "max-h-20 max-[640px]:max-h-14" : "max-h-14 max-[640px]:max-h-10"} h-auto w-auto max-w-[62%] object-contain opacity-55 grayscale transition-opacity duration-300 select-none group-hover:opacity-100`}
                       draggable="false"
                     />
                   </div>
