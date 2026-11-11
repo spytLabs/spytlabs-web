@@ -36,18 +36,31 @@ const content: ServicePageProps = {
     "Custom web applications",
     "iOS and Android apps",
     "APIs, databases and cloud hosting",
+    "System integrations and desktop apps",
     "Technical and security consulting",
   ],
-  proof: {
-    client: "Spillburg",
-    headline: "A 15-page corporate platform with its own investor news hub.",
-    stats: [
-      { value: "100", label: "Lighthouse best practices score" },
-      { value: "96", label: "Lighthouse accessibility score" },
-      { value: "8", label: "Dedicated service pages" },
-    ],
-    caseStudy: "/work/spillburg",
-  },
+  proof: [
+    {
+      client: "Spillburg",
+      headline: "A 15-page corporate platform with its own investor news hub.",
+      stats: [
+        { value: "100", label: "Lighthouse best practices score" },
+        { value: "96", label: "Lighthouse accessibility score" },
+        { value: "8", label: "Dedicated service pages" },
+      ],
+      caseStudy: "/work/spillburg",
+    },
+    {
+      client: "Vincent Pelle",
+      headline: "Store, courier and WhatsApp, run from one desktop app.",
+      stats: [
+        { value: "0", label: "Orders re-typed by hand into the courier" },
+        { value: "4", label: "Automatic WhatsApp updates per order" },
+        { value: "1", label: "Desktop app for orders, waybills and messages" },
+      ],
+      caseStudy: "/work/vincent-pelle",
+    },
+  ],
   faqs: [
     { question: "What do you build with?", answer: "We use modern web frameworks and choose the stack to suit the project. If you already have a preference or an existing system, we'll work out the best fit together." },
     { question: "Do you build mobile apps as well as websites?", answer: "Yes. We build iOS and Android apps, along with the APIs and databases behind them." },

@@ -173,13 +173,14 @@ export default function CaseStudiesSection() {
                     {study.gallery.map((item) => <GalleryTile key={item.src} item={item} showLabel={study.galleryLabels !== false} />)}
                   </AutoSlider>
                 </div>
-              ) : study.media ? (
+              ) : study.media?.kind === "video" ? (
                 <div className="relative min-h-72 max-lg:order-first max-lg:aspect-[4/3] max-lg:min-h-0 lg:m-3 lg:ml-0 lg:overflow-hidden lg:rounded-md">
-                  {study.media.kind === "video" ? (
-                    <video className="absolute inset-0 h-full w-full object-cover" src={study.media.src} autoPlay loop muted playsInline aria-label={study.media.alt} />
-                  ) : (
-                    <img className="absolute inset-0 h-full w-full object-cover" src={study.media.src} alt={study.media.alt} draggable={false} />
-                  )}
+                  <video className="absolute inset-0 h-full w-full object-cover" src={study.media.src} autoPlay loop muted playsInline aria-label={study.media.alt} />
+                </div>
+              ) : study.media ? (
+                // App screenshots are shown whole, not cropped to fill the card
+                <div className="flex min-w-0 items-center p-3 max-lg:order-first lg:pl-0">
+                  <Image src={study.media.src} alt={study.media.alt} width={1600} height={909} sizes="(min-width: 1024px) 58vw, 100vw" className="h-auto w-full rounded-md border border-black/10" draggable={false} />
                 </div>
               ) : null}
             </StickyCard>

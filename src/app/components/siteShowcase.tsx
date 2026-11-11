@@ -32,8 +32,8 @@ export const showcaseSites: ShowcaseSite[] = [
     name: "MISHEE",
     type: "E-commerce store",
     description: "An online store for premium gate motors and roller door systems, with product categories, product pages, cart and customer accounts.",
-    url: "mishee-web.vercel.app",
-    href: "https://mishee-web.vercel.app/",
+    url: "www.mishee.lk",
+    href: "https://www.mishee.lk/",
     home: `${BASE}/mishee/home.jpg`,
     mobile: `${BASE}/mishee/mobile.jpg`,
     screens: [

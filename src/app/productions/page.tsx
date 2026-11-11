@@ -68,6 +68,7 @@ const content: ServicePageProps = {
     { label: "Web design & branding", href: "/design", body: "A brand and website that match what people see in your videos." },
     { label: "AI automation", href: "/automation", body: "Follow up automatically with the leads your content brings in." },
   ],
+  showProjects: true,
   portfolio: { label: "Production portfolio", href: "https://www.spytlabs.com/r/production-portfolio" },
   schema: serviceGraph({ name: "Commercial & Social Media Video Production", serviceType: "Video production", description, path: "/productions", crumb: "Production" }),
 };

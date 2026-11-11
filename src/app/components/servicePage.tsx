@@ -4,6 +4,7 @@ import AutoSlider from "./AutoSlider";
 import ContactFooterSection from "./contactFooterSection";
 import JsonLd from "./JsonLd";
 import PageHeroSection from "./pageHeroSection";
+import ProjectShowcase from "./projectShowcase";
 import ReelVideo from "./ReelVideo";
 import SiteShowcase from "./siteShowcase";
 
@@ -25,19 +26,24 @@ export type ServicePageProps = {
   capabilities: { title: string; body: string }[];
   process: { title: string; body: string }[];
   deliverables: string[];
-  proof: {
-    client: string;
-    logo?: string;
-    headline: string;
-    stats: { value: string; label: string }[];
-    caseStudy: string;
-  };
+  // One or more real case studies, shown as dark cards
+  proof: ProofCard | ProofCard[];
   faqs: { question: string; answer: string }[];
   related: { label: string; href: string; body: string }[];
   portfolio: { label: string; href: string };
   // Names of the "more websites we've built" entries to show on this page
   showSites?: string[];
+  // Show the "more productions we've made" list
+  showProjects?: boolean;
   schema: object;
+};
+
+type ProofCard = {
+  client: string;
+  logo?: string;
+  headline: string;
+  stats: { value: string; label: string }[];
+  caseStudy: string;
 };
 
 function ArrowIcon({ className = "size-4" }: { className?: string }) {
@@ -129,6 +135,7 @@ export default function ServicePage({
   related,
   portfolio,
   showSites,
+  showProjects,
   schema,
 }: ServicePageProps) {
   return (
@@ -200,35 +207,38 @@ export default function ServicePage({
       </section>
 
       {showSites && <SiteShowcase only={showSites} />}
+      {showProjects && <ProjectShowcase />}
 
       {/* Proof from a real case study */}
-      <section className="px-12.5 pb-6 max-[1060px]:px-5.5">
-        <div className="grid gap-10 rounded-lg bg-[#111114] p-8 text-white sm:p-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:p-12">
-          <div className="flex flex-col justify-between gap-8">
-            <div>
-              <p className="m-0 text-sm font-medium tracking-wide text-white/60 uppercase">Case study</p>
-              {proof.logo ? (
-                <img src={proof.logo} alt={proof.client} loading="lazy" className="mt-6 h-14 w-auto sm:h-16" draggable={false} />
-              ) : (
-                <p className="m-0 mt-6 text-[clamp(18px,1.4vw,24px)] font-medium">{proof.client}</p>
-              )}
-              <h2 className="m-0 mt-5 text-[clamp(30px,3vw,52px)] leading-[1.05] font-semibold tracking-[-0.035em]">{proof.headline}</h2>
-            </div>
-            <Link href={proof.caseStudy} className="group flex min-h-11 w-fit items-center gap-2 text-[15px] font-medium text-white/85 hover:text-white">
-              Read the {proof.client} case study
-              <ArrowIcon className="size-4 transition-transform group-hover:rotate-45" />
-            </Link>
-          </div>
-          <div className="flex flex-col justify-end">
-            {proof.stats.map((stat) => (
-              // Value comes first in the DOM so the number and its meaning stay together when extracted
-              <div key={stat.label} className="flex flex-row-reverse items-end justify-between gap-6 border-b border-white/20 py-5 first:pt-0">
-                <p className="m-0 text-[clamp(40px,4.5vw,76px)] leading-none font-semibold tracking-[-0.04em]">{stat.value}</p>
-                <p className="m-0 max-w-60 text-[clamp(14px,1.05vw,17px)] text-white/65">{stat.label}</p>
+      <section className="flex flex-col gap-3 px-12.5 pb-6 max-[1060px]:px-5.5">
+        {[proof].flat().map((proof) => (
+          <div key={proof.caseStudy} className="grid gap-10 rounded-lg bg-[#111114] p-8 text-white sm:p-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:p-12">
+            <div className="flex flex-col justify-between gap-8">
+              <div>
+                <p className="m-0 text-sm font-medium tracking-wide text-white/60 uppercase">Case study</p>
+                {proof.logo ? (
+                  <img src={proof.logo} alt={proof.client} loading="lazy" className="mt-6 h-14 w-auto sm:h-16" draggable={false} />
+                ) : (
+                  <p className="m-0 mt-6 text-[clamp(18px,1.4vw,24px)] font-medium">{proof.client}</p>
+                )}
+                <h2 className="m-0 mt-5 text-[clamp(30px,3vw,52px)] leading-[1.05] font-semibold tracking-[-0.035em]">{proof.headline}</h2>
               </div>
-            ))}
+              <Link href={proof.caseStudy} className="group flex min-h-11 w-fit items-center gap-2 text-[15px] font-medium text-white/85 hover:text-white">
+                Read the {proof.client} case study
+                <ArrowIcon className="size-4 transition-transform group-hover:rotate-45" />
+              </Link>
+            </div>
+            <div className="flex flex-col justify-end">
+              {proof.stats.map((stat) => (
+                // Value comes first in the DOM so the number and its meaning stay together when extracted
+                <div key={stat.label} className="flex flex-row-reverse items-end justify-between gap-6 border-b border-white/20 py-5 first:pt-0">
+                  <p className="m-0 text-[clamp(40px,4.5vw,76px)] leading-none font-semibold tracking-[-0.04em]">{stat.value}</p>
+                  <p className="m-0 max-w-60 text-[clamp(14px,1.05vw,17px)] text-white/65">{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
       </section>
 
       {/* Questions */}

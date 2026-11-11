@@ -38,16 +38,28 @@ const content: ServicePageProps = {
     "Invoice and document extraction",
     "Reporting dashboards",
   ],
-  proof: {
-    client: "Sales outreach agent",
-    headline: "Five people's prospecting, now one autonomous agent.",
-    stats: [
-      { value: "3×", label: "Booked meetings in 90 days" },
-      { value: "2,500+", label: "Qualified leads a week, up from ~150" },
-      { value: "<2h", label: "Prospecting a week, down from 32" },
-    ],
-    caseStudy: "/work/sales-outreach-agent",
-  },
+  proof: [
+    {
+      client: "Sales outreach agent",
+      headline: "Five people's prospecting, now one autonomous agent.",
+      stats: [
+        { value: "3×", label: "Booked meetings in 90 days" },
+        { value: "2,500+", label: "Qualified leads a week, up from ~150" },
+        { value: "<2h", label: "Prospecting a week, down from 32" },
+      ],
+      caseStudy: "/work/sales-outreach-agent",
+    },
+    {
+      client: "Vincent Pelle",
+      headline: "Store, courier and WhatsApp, run from one desktop app.",
+      stats: [
+        { value: "0", label: "Orders re-typed by hand into the courier" },
+        { value: "4", label: "Automatic WhatsApp updates per order" },
+        { value: "1", label: "Desktop app for orders, waybills and messages" },
+      ],
+      caseStudy: "/work/vincent-pelle",
+    },
+  ],
   faqs: [
     { question: "What kind of work can be automated?", answer: "Anything repetitive that follows a pattern: finding and contacting leads, processing orders, answering common customer questions, moving data between systems, reading invoices and building reports." },
     { question: "Which tools do you build with?", answer: "Mainly n8n, Make and custom APIs, connected to the CRM, ERP, store and communication tools you already use." },
