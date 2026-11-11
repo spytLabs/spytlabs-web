@@ -17,6 +17,8 @@ export default function PartnerSection() {
     ceylonPost: "/figma-assets/ceylon-post-black.webp",
     oneNews: "/figma-assets/onenews-logo-black.webp",
     mishee: "/figma-assets/mishee-logo-black.webp",
+    berryMuch: "/figma-assets/berry-much-logo-black.webp",
+    spillburg: "/figma-assets/spillburg-holdings-logo.webp",
 
 
 
@@ -30,20 +32,22 @@ export default function PartnerSection() {
 
   // `tall` gives square/portrait logos more height so they match the wide ones visually
   const partners: { src: string; width: number; height: number; alt: string; tall?: boolean }[] = [
-    { src: assets.icter, width: 229, height: 170, alt: "ICTer" },
-    { src: assets.kepri, width: 300, height: 95, alt: "Kepri" },
+    { src: assets.berryMuch, width: 203, height: 170, alt: "Berry Much", tall: true },
     { src: assets.akina, width: 90, height: 170, alt: "Akina", tall: true },
-    { src: assets.knights, width: 300, height: 117, alt: "Knights" },
     { src: assets.lightfest, width: 215, height: 92, alt: "Colombo Literary Festival" },
+    { src: assets.ninetynine, width: 300, height: 169, alt: "NinetyNine" },
+    { src: assets.oneNews, width: 300, height: 140, alt: "One News" },
+    { src: assets.knights, width: 300, height: 117, alt: "Knights" },
     { src: assets.jetex, width: 152, height: 170, alt: "Jetex", tall: true },
     { src: assets.vincent, width: 300, height: 140, alt: "Vincent Pelle" },
     { src: assets.linkup, width: 300, height: 162, alt: "LinkUp" },
     { src: assets.weeranayaka, width: 300, height: 83, alt: "Weeranayaka Gems" },
-    { src: assets.ninetynine, width: 300, height: 169, alt: "NinetyNine" },
     { src: assets.adr, width: 113, height: 82, alt: "ADR" },
     { src: assets.ceylonPost, width: 300, height: 77, alt: "Ceylon Post" },
-    { src: assets.oneNews, width: 300, height: 140, alt: "One News" },
     { src: assets.mishee, width: 300, height: 50, alt: "Mishee" },
+    { src: assets.icter, width: 229, height: 170, alt: "ICTer" },
+    { src: assets.kepri, width: 300, height: 95, alt: "Kepri" },
+    { src: assets.spillburg, width: 300, height: 140, alt: "Spillburg Holdings" },
 
 
     // { src: assets.oracle, alt: "Oracle" },

@@ -79,6 +79,12 @@ function StudyMedia({ study }: { study: CaseStudy }) {
     );
   }
 
+  if (study.media?.kind === "image") {
+    return (
+      <Image src={study.media.src} alt={study.media.alt} width={1600} height={909} sizes="100vw" className="h-auto w-full rounded-lg border border-black/10" draggable={false} />
+    );
+  }
+
   return null;
 }
 

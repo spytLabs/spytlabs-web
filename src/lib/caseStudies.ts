@@ -40,6 +40,7 @@ export type CaseStudy = {
 const LITFEST = "/case-studies/colombo-litfest";
 const SPILLBURG = "/case-studies/spillburg";
 const NINETYNINE = "/case-studies/ninetynine";
+const VINCENT_PELLE = "/case-studies/vincent-pelle";
 
 export const caseStudies: CaseStudy[] = [
   {
@@ -82,6 +83,39 @@ export const caseStudies: CaseStudy[] = [
         { src: `${SPILLBURG}/contact.jpg`, alt: "Spillburg contact page" },
       ],
     },
+    theme: "light",
+  },
+  {
+    slug: "vincent-pelle",
+    lastModified: "2026-11-11",
+    seoTitle: "E-commerce Automation Case Study: Vincent Pelle",
+    metaDescription: "How spytLabs connected Vincent Pelle's WooCommerce store, Koombiyo courier and WhatsApp updates into one order dashboard with n8n, Twilio and Tauri.",
+    story: [
+      { heading: "The problem", body: "Vincent Pelle runs its online store on WordPress and ships through Koombiyo, but the two systems didn't talk to each other. Every order was re-typed into Koombiyo by hand, customer updates went out separately, and checking an order's status or message history meant switching between platforms. Waybills added more admin on top." },
+      { heading: "Automated order processing", body: "We connected the store to Koombiyo with n8n. When a customer places an order, the workflow picks it up and creates the delivery order in Koombiyo, so nobody has to copy details across. Orders can also stop in the dashboard first, so the team can check or edit them before they go to the courier." },
+      { heading: "WhatsApp updates", body: "Through Twilio and WhatsApp, customers hear from Vincent Pelle automatically when their order is placed, dispatched and delivered, and get a review request after it arrives. The team no longer sends these updates one by one." },
+      { heading: "A desktop app to run it all", body: "We built a Tauri desktop app around how Vincent Pelle works. From one place the team can review and edit orders, manage deliveries, print waybills, see order statistics, check the status of every WhatsApp message and watch orders flow between the store and Koombiyo." },
+      { heading: "Working around Koombiyo's API", body: "Koombiyo didn't offer a public API that covered everything the client needed. We worked with Koombiyo to get its API documentation, and where features still weren't exposed, we reverse-engineered its web dashboard to build them into the integration." },
+    ],
+    outcomes: [
+      "Orders now flow from the WooCommerce store to the Koombiyo courier without being re-typed by hand.",
+      "Customers get WhatsApp updates automatically at confirmation, dispatch and delivery, followed by a review request.",
+      "The team reviews orders, prints waybills and tracks every message from one desktop app.",
+    ],
+    serviceLinks: [
+      { label: "AI automation", href: "/automation" },
+      { label: "Software development", href: "/technology" },
+    ],
+    type: "Tech solution",
+    client: "Vincent Pelle",
+    logo: `${VINCENT_PELLE}/logo.webp`,
+    role: "E-commerce & retail · Order management and logistics automation",
+    headline: "Store, courier and WhatsApp, run from one dashboard.",
+    brief:
+      "We joined Vincent Pelle's store to its Koombiyo courier with n8n, automated WhatsApp updates through Twilio, and built a desktop app to review orders, print waybills and track every message.",
+    services: ["Workflow automation", "System integration", "Custom software"],
+    results: [],
+    media: { kind: "image", src: `${VINCENT_PELLE}/portal.jpg`, alt: "The Vincent Pelle order dashboard, with customer details blurred" },
     theme: "light",
   },
   {
